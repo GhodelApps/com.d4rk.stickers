@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="6dp"
+    android:layout_marginEnd="6dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/infoPageBackgroundColor"
-    android:orientation="vertical"
-    android:paddingTop="8dp"
-    tools:context=".StickerPackInfoActivity">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,4 +62,4 @@
             android:textAlignment="center" />
 
     </LinearLayout>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

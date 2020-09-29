@@ -5,9 +5,10 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f8f1ca0652aeeacb293453f6ad7abea0/jetified-animated-base-2.2.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/29a8e1f1c5d216d07e2ab8fcbc1a9f58/jetified-animated-base-2.2.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c4b79132256f79456af809062d1a6f63/jetified-animated-base-2.2.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e34e8ca7de68ce593e64077e8040a1dd/jetified-animated-base-2.2.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e34e8ca7de68ce593e64077e8040a1dd/jetified-animated-base-2.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e34e8ca7de68ce593e64077e8040a1dd/jetified-animated-base-2.2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e64bea3dd86214164a2145224c0a8233/jetified-animated-base-2.2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e64bea3dd86214164a2145224c0a8233/jetified-animated-base-2.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e64bea3dd86214164a2145224c0a8233/jetified-animated-base-2.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.fresco/animated-base/2.2.0/ae6171f584c7b2f1e860cb99e988f874ff0cd98a/animated-base-2.2.0-javadoc.jar!/" />

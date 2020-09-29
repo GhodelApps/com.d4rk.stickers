@@ -21,6 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
+@SuppressWarnings("ALL")
 public class StickerPackListActivity extends AddStickerPackActivity {
     public static final String EXTRA_STICKER_PACK_LIST_DATA = "sticker_pack_list";
     private static final int STICKER_PREVIEW_DISPLAY_LIMIT = 5;

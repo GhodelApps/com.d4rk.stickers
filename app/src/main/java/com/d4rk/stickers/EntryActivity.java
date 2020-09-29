@@ -72,6 +72,7 @@ public class EntryActivity extends BaseActivity {
         }
     }
 
+    @SuppressWarnings("deprecation")
     static class LoadListAsyncTask extends AsyncTask<Void, Void, Pair<String, ArrayList<StickerPack>>> {
         private final WeakReference<EntryActivity> contextWeakReference;
 

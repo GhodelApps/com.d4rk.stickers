@@ -1,16 +1,17 @@
 <component name="libraryTable">
   <library name="Gradle: com.facebook.fresco:fresco:2.2.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2a3e98f54d92921e35e1daf8bc484f8e/jetified-fresco-2.2.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/79f3cc56da3da05a60452a299f95f892/jetified-fresco-2.2.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../../../../Program Files/Google/Android/Grandle/caches/transforms-2/files-2.1/b9ef6420f61f08e5306e99c94650da67/jetified-fresco-2.2.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be24e04df7875422ad91e6098251ef3d/jetified-fresco-2.2.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/481c27815fdfba9511a440f3f9adde4e/jetified-fresco-2.2.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cccc766f54177baac5342d4fe3416a2a/jetified-fresco-2.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2a3e98f54d92921e35e1daf8bc484f8e/jetified-fresco-2.2.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2a3e98f54d92921e35e1daf8bc484f8e/jetified-fresco-2.2.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2a3e98f54d92921e35e1daf8bc484f8e/jetified-fresco-2.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/79f3cc56da3da05a60452a299f95f892/jetified-fresco-2.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/79f3cc56da3da05a60452a299f95f892/jetified-fresco-2.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/79f3cc56da3da05a60452a299f95f892/jetified-fresco-2.2.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.fresco/fresco/2.2.0/b231564b3d3fbaf08b2d2c6be0f016960803b128/fresco-2.2.0-javadoc.jar!/" />

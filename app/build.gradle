@@ -70,6 +70,7 @@ private void checkApplicationIdInDebug() {
     Properties properties = new Properties()
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
     def ignoreApplicationIdCheck = properties.getProperty('ignoreApplicationIdCheck')
+    //noinspection GroovyEmptyStatementBody
     if (ignoreApplicationIdCheck == null) {
     } else {
         println("application id check ignored")
