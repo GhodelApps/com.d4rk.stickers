@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.d4rk.stickers">
+    package="com.d4rk.stickers"
+    xmlns:dist="http://schemas.android.com/apk/distribution">
 
+    <dist:module dist:instant="true" />
     <application
         android:name="com.d4rk.stickers.StickerApplication"
         android:allowBackup="false"
@@ -44,11 +46,6 @@
             android:exported="true"
             android:readPermission="com.whatsapp.sticker.READ" />
         <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-
-            </intent-filter>
 
         </activity>
 
