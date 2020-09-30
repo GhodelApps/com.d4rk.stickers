@@ -120,6 +120,18 @@
         },
         {
           "image_file": "27.webp",
+          "emojis": ["📱","😦"]
+        },
+        {
+          "image_file": "28.webp",
+          "emojis": ["📱","😦"]
+        },
+        {
+          "image_file": "29.webp",
+          "emojis": ["📱","😦"]
+        },
+        {
+          "image_file": "30.webp",
           "emojis": ["🔋","😵"]
         }
       ]
@@ -880,14 +892,6 @@
         },
         {
           "image_file": "20.webp",
-          "emojis": ["😆","😂"]
-        },
-        {
-          "image_file": "21.webp",
-          "emojis": ["😆","😂"]
-        },
-        {
-          "image_file": "22.webp",
           "emojis": ["🔋","😵"]
         }
       ]
