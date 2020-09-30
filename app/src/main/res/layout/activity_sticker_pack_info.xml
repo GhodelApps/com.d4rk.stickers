@@ -31,7 +31,7 @@
             android:id="@+id/view_webpage"
             style="@style/InfoButtonStyle"
             android:text="@string/view_webpage"
-            app:drawableStartCompat="@drawable/sticker_3rdparty_web" />
+            app:drawableStartCompat="@drawable/sticker_3rdparty_web_beta" />
 
         <TextView
             android:id="@+id/send_email"
