@@ -24,14 +24,14 @@
             android:clickable="false"
             android:text="@string/info_screen_tray_icon"
             android:textColor="#673AB7"
-            tools:drawableLeft="@drawable/sticker_3rdparty_web"
-            tools:drawableStart="@drawable/sticker_3rdparty_web" />
+            tools:drawableLeft="@drawable/sticker_3rdparty_d4rk"
+            tools:drawableStart="@drawable/sticker_3rdparty_d4rk" />
 
         <TextView
             android:id="@+id/view_webpage"
             style="@style/InfoButtonStyle"
             android:text="@string/view_webpage"
-            app:drawableStartCompat="@drawable/sticker_3rdparty_web_beta" />
+            app:drawableStartCompat="@drawable/sticker_3rdparty_youtube" />
 
         <TextView
             android:id="@+id/send_email"
@@ -40,16 +40,16 @@
             app:drawableStartCompat="@drawable/sticker_3rdparty_email" />
 
         <TextView
-            android:id="@+id/privacy_policy"
-            style="@style/InfoButtonStyle"
-            android:text="@string/privacy_policy"
-            app:drawableStartCompat="@drawable/sticker_3rdparty_privacy" />
-
-        <TextView
             android:id="@+id/license_agreement"
             style="@style/InfoButtonStyle"
             android:text="@string/license_agreement"
             app:drawableStartCompat="@drawable/sticker_3rdparty_license" />
+
+        <TextView
+            android:id="@+id/privacy_policy"
+            style="@style/InfoButtonStyle"
+            android:text="@string/privacy_policy"
+            app:drawableStartCompat="@drawable/sticker_3rdparty_privacy" />
 
         <TextView
             android:layout_width="match_parent"
