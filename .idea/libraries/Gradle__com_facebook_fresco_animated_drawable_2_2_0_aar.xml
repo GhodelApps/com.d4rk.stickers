@@ -4,21 +4,11 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7636bbd9815cc6392c8c12351130cad1/jetified-animated-drawable-2.2.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../../../../Program Files/Google/Android/Grandle/caches/transforms-2/files-2.1/3b246873c2ee284490b454c93ec12b85/jetified-animated-drawable-2.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/92c0bdde4a8133a2cd1218ddca90a15c/jetified-animated-drawable-2.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9bd0542eeb2de416d5509e377739d69a/jetified-animated-drawable-2.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3c64a1f63aa9ba3f90d43788aaad9f47/jetified-animated-drawable-2.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0113b889050418237c31c96a9bfef778/jetified-animated-drawable-2.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/372c269a9d23205cffa7e13a5872d7e4/jetified-animated-drawable-2.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7636bbd9815cc6392c8c12351130cad1/jetified-animated-drawable-2.2.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7636bbd9815cc6392c8c12351130cad1/jetified-animated-drawable-2.2.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7636bbd9815cc6392c8c12351130cad1/jetified-animated-drawable-2.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7636bbd9815cc6392c8c12351130cad1/jetified-animated-drawable-2.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7636bbd9815cc6392c8c12351130cad1/jetified-animated-drawable-2.2.0/AndroidManifest.xml" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.fresco/animated-drawable/2.2.0/b356ac37a2624c1175c070eb8b15e738e5e1f29b/animated-drawable-2.2.0-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.fresco/animated-drawable/2.2.0/a2faa6bc0e038c6c3f2e25297a54e45588d0e7cf/animated-drawable-2.2.0-sources.jar!/" />
-    </SOURCES>
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>
