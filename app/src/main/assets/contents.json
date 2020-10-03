@@ -1,6 +1,6 @@
 {
-  "android_play_store_link": "",
-  "ios_app_store_link": "",
+  "android_play_store_link": "https://play.google.com/store",
+  "ios_app_store_link": "https://itunes.apple.com/",
   "sticker_packs": [
     {
       "identifier": "1",
@@ -386,18 +386,6 @@
         },
         {
           "image_file": "27.webp",
-          "emojis": ["😆","😂"]
-        },
-        {
-          "image_file": "28.webp",
-          "emojis": ["😆","😂"]
-        },
-        {
-          "image_file": "29.webp",
-          "emojis": ["😆","😂"]
-        },
-        {
-          "image_file": "30.webp",
           "emojis": ["🔋","😵"]
         }
       ]
@@ -798,6 +786,18 @@
         },
         {
           "image_file": "12.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "13.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "14.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "15.webp",
           "emojis": ["🔋","😵"]
         }
       ]

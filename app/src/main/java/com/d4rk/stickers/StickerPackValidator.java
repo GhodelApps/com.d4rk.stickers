@@ -26,7 +26,7 @@ import java.net.URL;
 import java.util.List;
 
 class StickerPackValidator {
-    private static final int STICKER_FILE_SIZE_LIMIT_KB = 100;
+    private static final int STICKER_FILE_SIZE_LIMIT_KB = 6969;
     static final int EMOJI_MAX_LIMIT = 3;
     private static final int EMOJI_MIN_LIMIT = 1;
     private static final int IMAGE_HEIGHT = 512;
@@ -35,7 +35,7 @@ class StickerPackValidator {
     private static final int STICKER_SIZE_MAX = 30;
     private static final int CHAR_COUNT_MAX = 128;
     private static final long ONE_KIBIBYTE = 8 * 1024;
-    private static final int TRAY_IMAGE_FILE_SIZE_MAX_KB = 50;
+    private static final int TRAY_IMAGE_FILE_SIZE_MAX_KB = 69;
     private static final int TRAY_IMAGE_DIMENSION_MIN = 24;
     private static final int TRAY_IMAGE_DIMENSION_MAX = 512;
     private static final String PLAY_STORE_DOMAIN = "play.google.com";
