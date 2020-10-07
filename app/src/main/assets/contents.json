@@ -892,6 +892,26 @@
         },
         {
           "image_file": "20.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "21.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "22.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "23.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "24.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "25.webp",
           "emojis": ["🔋","😵"]
         }
       ]
