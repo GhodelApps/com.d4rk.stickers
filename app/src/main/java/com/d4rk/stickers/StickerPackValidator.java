@@ -34,7 +34,7 @@ class StickerPackValidator {
     private static final int STICKER_SIZE_MIN = 3;
     private static final int STICKER_SIZE_MAX = 30;
     private static final int CHAR_COUNT_MAX = 128;
-    private static final long ONE_KIBIBYTE = 8 * 1024;
+    private static final long ONE_KILOBYTE = 8 * 1024;
     private static final int TRAY_IMAGE_FILE_SIZE_MAX_KB = 69;
     private static final int TRAY_IMAGE_DIMENSION_MIN = 24;
     private static final int TRAY_IMAGE_DIMENSION_MAX = 512;
@@ -94,7 +94,7 @@ class StickerPackValidator {
         }
         try {
             final byte[] bytes = StickerPackLoader.fetchStickerAsset(stickerPack.identifier, stickerPack.trayImageFile, context.getContentResolver());
-            if (bytes.length > TRAY_IMAGE_FILE_SIZE_MAX_KB * ONE_KIBIBYTE) {
+            if (bytes.length > TRAY_IMAGE_FILE_SIZE_MAX_KB * ONE_KILOBYTE) {
                 throw new IllegalStateException("tray image should be less than " + TRAY_IMAGE_FILE_SIZE_MAX_KB + " KB, tray image file: " + stickerPack.trayImageFile);
             }
             Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
@@ -132,7 +132,7 @@ class StickerPackValidator {
     private static void validateStickerFile(@NonNull Context context, @NonNull String identifier, @NonNull final String fileName) throws IllegalStateException {
         try {
             final byte[] bytes = StickerPackLoader.fetchStickerAsset(identifier, fileName, context.getContentResolver());
-            if (bytes.length > STICKER_FILE_SIZE_LIMIT_KB * ONE_KIBIBYTE) {
+            if (bytes.length > STICKER_FILE_SIZE_LIMIT_KB * ONE_KILOBYTE) {
                 throw new IllegalStateException("sticker should be less than " + STICKER_FILE_SIZE_LIMIT_KB + "KB, sticker pack identifier:" + identifier + ", filename:" + fileName);
             }
             try {
