@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 	<!-- Content description for the sticker pack tray image -->
 	<string name="tray_image_content_description">Sticker Pack Tray Image</string>
 	<!-- the title of info button in the menu that takes the user to more information about that pack showing publisher website and so on -->
@@ -34,7 +34,7 @@
 	<string name="license_agreement">Kasunduan sa lisensya</string>
 	<!-- Title of the sticker pack list activity page in case the app contains multiple sticker packs, the singular string will be used when there is only one pack in the app -->
 	<plurals name="title_activity_sticker_packs_list">
-		<item quantity="one">Sticker Pack</item>
+		<item quantity="one" tools:ignore="ImpliedQuantity">Sticker Pack</item>
 		<item quantity="other">Mga Sticker Pack</item>
 	</plurals>
 </resources>

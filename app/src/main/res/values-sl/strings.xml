@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 	<!-- Content description for the sticker pack tray image -->
 	<string name="tray_image_content_description">Prikazna sličica paketa nalepk</string>
 	<!-- the title of info button in the menu that takes the user to more information about that pack showing publisher website and so on -->
@@ -33,9 +33,9 @@
 	<!-- Text of button that allows user to click to go to the license agreement website -->
 	<string name="license_agreement">Licenčna pogodba</string>
 	<!-- Title of the sticker pack list activity page in case the app contains multiple sticker packs, the singular string will be used when there is only one pack in the app -->
-	<plurals name="title_activity_sticker_packs_list">
-		<item quantity="one">Paket nalepk</item>
-		<item quantity="two">Paketa nalepk</item>
+	<plurals name="title_activity_sticker_packs_list" tools:ignore="MissingQuantity">
+		<item quantity="one" tools:ignore="ImpliedQuantity">Paket nalepk</item>
+		<item quantity="two" tools:ignore="ImpliedQuantity">Paketa nalepk</item>
 		<item quantity="other">Paketi nalepk</item>
 	</plurals>
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 	<!-- Content description for the sticker pack tray image -->
 	<string name="tray_image_content_description">Miniatura de pacote de figurinhas</string>
 	<!-- the title of info button in the menu that takes the user to more information about that pack showing publisher website and so on -->
@@ -23,7 +23,7 @@
 	<!-- Text shown to the user instead of Add to WhatsApp button if the pack is already added to WhatsApp -->
 	<string name="details_pack_already_added">Pacote de figurinhas adicionado ao WhatsApp</string>
 	<!-- Title in the intent chooser that shows when user has multiple email client installed -->
-	<string name="info_send_email_to_prompt">Enviar e-mail com...</string>
+	<string name="info_send_email_to_prompt">Enviar e-mail com…</string>
 	<!-- Message to show in a dialog when user fails to add sticker pack -->
 	<string name="add_pack_fail_prompt_update_whatsapp">Não foi possível adicionar o pacote de figurinhas. Se você quiser adicioná-lo, certifique-se de atualizar o WhatsApp para a última versão.</string>
 	<!-- Text in dialog button when a user has an old version of WhatsApp that prevents them from adding the sticker pack, clicking on it will take user to play store -->
@@ -34,7 +34,7 @@
 	<string name="license_agreement">Contrato de licença</string>
 	<!-- Title of the sticker pack list activity page in case the app contains multiple sticker packs, the singular string will be used when there is only one pack in the app -->
 	<plurals name="title_activity_sticker_packs_list">
-		<item quantity="one">Pacote de figurinhas</item>
+		<item quantity="one" tools:ignore="ImpliedQuantity">Pacote de figurinhas</item>
 		<item quantity="other">Pacotes de figurinhas</item>
 	</plurals>
 </resources>

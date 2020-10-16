@@ -5,8 +5,5 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorAccent">#4285F4</color>
-    <color name="inactiveAddButtonColor">@color/colorPrimary</color>
-    <color name="infoPageBackgroundColor">@color/colorPrimary</color>
-    <color name="actionBarArrowColor">@color/colorAccent</color>
 </resources>
 
