@@ -532,6 +532,18 @@
         },
         {
           "image_file": "10.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "11.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "12.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "13.webp",
           "emojis": ["🔋","😵"]
         }
       ]
@@ -682,6 +694,10 @@
         },
         {
           "image_file": "6.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "7.webp",
           "emojis": ["🔋","😵"]
         }
       ]
@@ -920,6 +936,18 @@
         },
         {
           "image_file": "27.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "28.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "29.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "30.webp",
           "emojis": ["🔋","😵"]
         }
       ]

@@ -12,9 +12,9 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
-import android.text.TextUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,6 +26,7 @@ import java.util.List;
 
 import static com.d4rk.stickers.StickerContentProvider.ANDROID_APP_DOWNLOAD_LINK_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.AVOID_CACHE;
+import static com.d4rk.stickers.StickerContentProvider.IMAGE_DATA_VERSION;
 import static com.d4rk.stickers.StickerContentProvider.IOS_APP_DOWNLOAD_LINK_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.LICENSE_AGREENMENT_WEBSITE;
 import static com.d4rk.stickers.StickerContentProvider.PRIVACY_POLICY_WEBSITE;
@@ -37,7 +38,6 @@ import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_ICON_IN_QUER
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_IDENTIFIER_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_NAME_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_PUBLISHER_IN_QUERY;
-import static com.d4rk.stickers.StickerContentProvider.IMAGE_DATA_VERSION;
 
 class StickerPackLoader {
 
