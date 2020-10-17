@@ -78,7 +78,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
         setAddButtonAppearance(viewHolder.addButton, pack);
     }
 
-    private void setAddButtonAppearance(ImageView addButton, StickerPack pack) {
+    private void setAddButtonAppearance(@NonNull ImageView addButton, @NonNull StickerPack pack) {
         if (pack.getIsWhitelisted()) {
             addButton.setImageResource(R.drawable.sticker_3rdparty_added);
             addButton.setClickable(false);
@@ -93,7 +93,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
         }
     }
 
-    private void setBackground(View view) {
+    private void setBackground(@NonNull View view) {
         view.setBackground(null);
     }
 
@@ -110,7 +110,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
         }
     }
 
-    void setStickerPackList(List<StickerPack> stickerPackList) {
+    void setStickerPackList(@NonNull List<StickerPack> stickerPackList) {
         this.stickerPacks = stickerPackList;
     }
 

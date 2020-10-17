@@ -13,10 +13,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 class StickerPackListItemViewHolder extends RecyclerView.ViewHolder {
 
+    @NonNull
     final View container;
     final TextView titleView;
     final TextView publisherView;
@@ -24,7 +26,7 @@ class StickerPackListItemViewHolder extends RecyclerView.ViewHolder {
     final ImageView addButton;
     final LinearLayout imageRowView;
 
-    StickerPackListItemViewHolder(final View itemView) {
+    StickerPackListItemViewHolder(@NonNull final View itemView) {
         super(itemView);
         container = itemView;
         titleView = itemView.findViewById(R.id.sticker_pack_title);

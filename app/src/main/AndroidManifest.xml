@@ -45,10 +45,5 @@
             android:enabled="true"
             android:exported="true"
             android:readPermission="com.whatsapp.sticker.READ" />
-        <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
-
-        </activity>
-
-        <activity android:name=".MainActivity" />
     </application>
 </manifest>

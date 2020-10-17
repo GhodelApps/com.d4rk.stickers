@@ -74,7 +74,7 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
         recyclerView.addOnScrollListener(dividerScrollListener);
         divider = findViewById(R.id.divider);
         if (stickerPreviewAdapter == null) {
-            stickerPreviewAdapter = new StickerPreviewAdapter(getLayoutInflater(), R.drawable.sticker_error, getResources().getDimensionPixelSize(R.dimen.sticker_pack_details_image_size), getResources().getDimensionPixelSize(R.dimen.sticker_pack_details_image_padding), stickerPack);
+            stickerPreviewAdapter = new StickerPreviewAdapter(getLayoutInflater(), getResources().getDimensionPixelSize(R.dimen.sticker_pack_details_image_size), getResources().getDimensionPixelSize(R.dimen.sticker_pack_details_image_padding), stickerPack);
             recyclerView.setAdapter(stickerPreviewAdapter);
         }
         packNameTextView.setText(stickerPack.name);
@@ -107,7 +107,7 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_info && stickerPack != null) {
             Uri trayIconUri = StickerPackLoader.getStickerAssetUri(stickerPack.identifier, stickerPack.trayImageFile);
             launchInfoActivity(stickerPack.publisherWebsite, stickerPack.publisherEmail, stickerPack.privacyPolicyWebsite, stickerPack.licenseAgreementWebsite, trayIconUri.toString());
@@ -147,7 +147,7 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
             updateDivider(recyclerView);
         }
 
-        private void updateDivider(RecyclerView recyclerView) {
+        private void updateDivider(@NonNull RecyclerView recyclerView) {
             boolean showDivider = recyclerView.computeVerticalScrollOffset() > 0;
             if (divider != null) {
                 divider.setVisibility(showDivider ? View.VISIBLE : View.INVISIBLE);
@@ -181,6 +181,7 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
     }
 
     static class WhiteListCheckAsyncTask extends AsyncTask<StickerPack, Void, Boolean> {
+        @NonNull
         private final WeakReference<StickerPackDetailsActivity> stickerPackDetailsActivityWeakReference;
 
         WhiteListCheckAsyncTask(StickerPackDetailsActivity stickerPackListActivity) {
@@ -198,7 +199,7 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
         }
 
         @Override
-        protected void onPostExecute(Boolean isWhitelisted) {
+        protected void onPostExecute(@NonNull Boolean isWhitelisted) {
             final StickerPackDetailsActivity stickerPackDetailsActivity = stickerPackDetailsActivityWeakReference.get();
             if (stickerPackDetailsActivity != null) {
                 stickerPackDetailsActivity.updateAddUI(isWhitelisted);

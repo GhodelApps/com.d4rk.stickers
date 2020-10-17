@@ -11,6 +11,8 @@ package com.d4rk.stickers;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+
 import java.util.List;
 
 class Sticker implements Parcelable {
@@ -23,18 +25,20 @@ class Sticker implements Parcelable {
         this.emojis = emojis;
     }
 
-    private Sticker(Parcel in) {
+    private Sticker(@NonNull Parcel in) {
         imageFileName = in.readString();
         emojis = in.createStringArrayList();
         size = in.readLong();
     }
 
     public static final Creator<Sticker> CREATOR = new Creator<Sticker>() {
+        @NonNull
         @Override
-        public Sticker createFromParcel(Parcel in) {
+        public Sticker createFromParcel(@NonNull Parcel in) {
             return new Sticker(in);
         }
 
+        @NonNull
         @Override
         public Sticker[] newArray(int size) {
             return new Sticker[size];
@@ -51,7 +55,7 @@ class Sticker implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
         dest.writeString(imageFileName);
         dest.writeStringList(emojis);
         dest.writeLong(size);

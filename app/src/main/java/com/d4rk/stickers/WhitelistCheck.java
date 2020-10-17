@@ -64,7 +64,7 @@ class WhitelistCheck {
         return false;
     }
 
-    static boolean isPackageInstalled(String packageName, PackageManager packageManager) {
+    static boolean isPackageInstalled(String packageName, @NonNull PackageManager packageManager) {
         try {
             final ApplicationInfo applicationInfo = packageManager.getApplicationInfo(packageName, 0);
             //noinspection SimplifiableIfStatement
@@ -78,11 +78,11 @@ class WhitelistCheck {
         }
     }
 
-    static boolean isWhatsAppConsumerAppInstalled(PackageManager packageManager) {
+    static boolean isWhatsAppConsumerAppInstalled(@NonNull PackageManager packageManager) {
         return !WhitelistCheck.isPackageInstalled(CONSUMER_WHATSAPP_PACKAGE_NAME, packageManager);
     }
 
-    static boolean isWhatsAppSmbAppInstalled(PackageManager packageManager) {
+    static boolean isWhatsAppSmbAppInstalled(@NonNull PackageManager packageManager) {
         return !WhitelistCheck.isPackageInstalled(SMB_WHATSAPP_PACKAGE_NAME, packageManager);
     }
 

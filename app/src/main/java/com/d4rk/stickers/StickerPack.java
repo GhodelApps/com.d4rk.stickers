@@ -11,6 +11,8 @@ package com.d4rk.stickers;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+
 import java.util.List;
 
 class StickerPack implements Parcelable {
@@ -52,7 +54,7 @@ class StickerPack implements Parcelable {
         return isWhitelisted;
     }
 
-    private StickerPack(Parcel in) {
+    private StickerPack(@NonNull Parcel in) {
         identifier = in.readString();
         name = in.readString();
         publisher = in.readString();
@@ -71,18 +73,20 @@ class StickerPack implements Parcelable {
     }
 
     public static final Creator<StickerPack> CREATOR = new Creator<StickerPack>() {
+        @NonNull
         @Override
-        public StickerPack createFromParcel(Parcel in) {
+        public StickerPack createFromParcel(@NonNull Parcel in) {
             return new StickerPack(in);
         }
 
+        @NonNull
         @Override
         public StickerPack[] newArray(int size) {
             return new StickerPack[size];
         }
     };
 
-    void setStickers(List<Sticker> stickers) {
+    void setStickers(@NonNull List<Sticker> stickers) {
         this.stickers = stickers;
         totalSize = 0;
         for (Sticker sticker : stickers) {
@@ -112,7 +116,7 @@ class StickerPack implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
         dest.writeString(identifier);
         dest.writeString(name);
         dest.writeString(publisher);

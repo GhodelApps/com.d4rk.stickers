@@ -11,6 +11,7 @@ package com.d4rk.stickers;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -59,7 +60,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         }
     }
 
-    private void showStickerPackList(List<StickerPack> stickerPackList) {
+    private void showStickerPackList(@NonNull List<StickerPack> stickerPackList) {
         allStickerPacksListAdapter = new StickerPackListAdapter(stickerPackList, onAddButtonClickedListener);
         packRecyclerView.setAdapter(allStickerPacksListAdapter);
         packLayoutManager = new LinearLayoutManager(this);
@@ -92,14 +93,16 @@ public class StickerPackListActivity extends AddStickerPackActivity {
 
 
     static class WhiteListCheckAsyncTask extends AsyncTask<StickerPack, Void, List<StickerPack>> {
+        @NonNull
         private final WeakReference<StickerPackListActivity> stickerPackListActivityWeakReference;
 
         WhiteListCheckAsyncTask(StickerPackListActivity stickerPackListActivity) {
             this.stickerPackListActivityWeakReference = new WeakReference<>(stickerPackListActivity);
         }
 
+        @NonNull
         @Override
-        protected final List<StickerPack> doInBackground(StickerPack... stickerPackArray) {
+        protected final List<StickerPack> doInBackground(@NonNull StickerPack... stickerPackArray) {
             final StickerPackListActivity stickerPackListActivity = stickerPackListActivityWeakReference.get();
             if (stickerPackListActivity == null) {
                 return Arrays.asList(stickerPackArray);
@@ -111,7 +114,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         }
 
         @Override
-        protected void onPostExecute(List<StickerPack> stickerPackList) {
+        protected void onPostExecute(@NonNull List<StickerPack> stickerPackList) {
             final StickerPackListActivity stickerPackListActivity = stickerPackListActivityWeakReference.get();
             if (stickerPackListActivity != null) {
                 stickerPackListActivity.allStickerPacksListAdapter.setStickerPackList(stickerPackList);

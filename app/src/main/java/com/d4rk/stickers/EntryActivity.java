@@ -17,6 +17,7 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.lang.ref.WeakReference;
@@ -39,7 +40,7 @@ public class EntryActivity extends BaseActivity {
         loadListAsyncTask.execute();
     }
 
-    private void showStickerPack(ArrayList<StickerPack> stickerPackList) {
+    private void showStickerPack(@NonNull ArrayList<StickerPack> stickerPackList) {
         progressBar.setVisibility(View.GONE);
         if (stickerPackList.size() > 1) {
             final Intent intent = new Intent(this, StickerPackListActivity.class);
@@ -74,12 +75,14 @@ public class EntryActivity extends BaseActivity {
 
     @SuppressWarnings("deprecation")
     static class LoadListAsyncTask extends AsyncTask<Void, Void, Pair<String, ArrayList<StickerPack>>> {
+        @NonNull
         private final WeakReference<EntryActivity> contextWeakReference;
 
         LoadListAsyncTask(EntryActivity activity) {
             this.contextWeakReference = new WeakReference<>(activity);
         }
 
+        @Nullable
         @Override
         protected Pair<String, ArrayList<StickerPack>> doInBackground(Void... voids) {
             ArrayList<StickerPack> stickerPackList;
@@ -104,7 +107,7 @@ public class EntryActivity extends BaseActivity {
         }
 
         @Override
-        protected void onPostExecute(Pair<String, ArrayList<StickerPack>> stringListPair) {
+        protected void onPostExecute(@NonNull Pair<String, ArrayList<StickerPack>> stringListPair) {
 
             final EntryActivity entryActivity = contextWeakReference.get();
             if (entryActivity != null) {

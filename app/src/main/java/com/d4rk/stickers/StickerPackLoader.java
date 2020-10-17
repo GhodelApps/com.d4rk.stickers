@@ -45,7 +45,7 @@ class StickerPackLoader {
      * Get the list of sticker packs for the sticker content provider
      */
     @NonNull
-    static ArrayList<StickerPack> fetchStickerPacks(Context context) throws IllegalStateException {
+    static ArrayList<StickerPack> fetchStickerPacks(@NonNull Context context) throws IllegalStateException {
         final Cursor cursor = context.getContentResolver().query(StickerContentProvider.AUTHORITY_URI, null, null, null, null);
         if (cursor == null) {
             throw new IllegalStateException("could not fetch from content provider, " + BuildConfig.CONTENT_PROVIDER_AUTHORITY);
@@ -71,7 +71,7 @@ class StickerPackLoader {
     }
 
     @NonNull
-    private static List<Sticker> getStickersForPack(Context context, StickerPack stickerPack) {
+    private static List<Sticker> getStickersForPack(@NonNull Context context, @NonNull StickerPack stickerPack) {
         final List<Sticker> stickers = fetchFromContentProviderForStickers(stickerPack.identifier, context.getContentResolver());
         for (Sticker sticker : stickers) {
             final byte[] bytes;
@@ -81,7 +81,7 @@ class StickerPackLoader {
                     throw new IllegalStateException("Asset file is empty, pack: " + stickerPack.name + ", sticker: " + sticker.imageFileName);
                 }
                 sticker.setSize(bytes.length);
-            } catch (IOException | IllegalArgumentException e) {
+            } catch (@NonNull IOException | IllegalArgumentException e) {
                 throw new IllegalStateException("Asset file doesn't exist. pack: " + stickerPack.name + ", sticker: " + sticker.imageFileName, e);
             }
         }
@@ -90,7 +90,7 @@ class StickerPackLoader {
 
 
     @NonNull
-    private static ArrayList<StickerPack> fetchFromContentProvider(Cursor cursor) {
+    private static ArrayList<StickerPack> fetchFromContentProvider(@NonNull Cursor cursor) {
         ArrayList<StickerPack> stickerPackList = new ArrayList<>();
         cursor.moveToFirst();
         do {
@@ -115,7 +115,7 @@ class StickerPackLoader {
     }
 
     @NonNull
-    private static List<Sticker> fetchFromContentProviderForStickers(String identifier, ContentResolver contentResolver) {
+    private static List<Sticker> fetchFromContentProviderForStickers(String identifier, @NonNull ContentResolver contentResolver) {
         Uri uri = getStickerListUri(identifier);
 
         final String[] projection = {STICKER_FILE_NAME_IN_QUERY, STICKER_FILE_EMOJI_IN_QUERY};
@@ -139,7 +139,8 @@ class StickerPackLoader {
         return stickers;
     }
 
-    static byte[] fetchStickerAsset(@NonNull final String identifier, @NonNull final String name, ContentResolver contentResolver) throws IOException {
+    @NonNull
+    static byte[] fetchStickerAsset(@NonNull final String identifier, @NonNull final String name, @NonNull ContentResolver contentResolver) throws IOException {
         try (final InputStream inputStream = contentResolver.openInputStream(getStickerAssetUri(identifier, name));
              final ByteArrayOutputStream buffer = new ByteArrayOutputStream()) {
             if (inputStream == null) {

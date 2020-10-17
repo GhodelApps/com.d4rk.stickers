@@ -177,7 +177,7 @@ class StickerPackValidator {
     }
 
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
-    private static boolean isURLInCorrectDomain(String urlString, String domain) throws IllegalStateException {
+    private static boolean isURLInCorrectDomain(String urlString, @NonNull String domain) throws IllegalStateException {
         try {
             URL url = new URL(urlString);
             if (domain.equals(url.getHost())) {

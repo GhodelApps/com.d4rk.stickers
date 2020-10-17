@@ -100,6 +100,7 @@ public class StickerContentProvider extends ContentProvider {
         return true;
     }
 
+    @NonNull
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
@@ -126,6 +127,7 @@ public class StickerContentProvider extends ContentProvider {
     }
 
 
+    @NonNull
     @Override
     public String getType(@NonNull Uri uri) {
         final int matchCode = MATCHER.match(uri);
@@ -148,7 +150,7 @@ public class StickerContentProvider extends ContentProvider {
     private synchronized void readContentFile(@NonNull Context context) {
         try (InputStream contentsInputStream = context.getAssets().open(CONTENT_FILE_NAME)) {
             stickerPackList = ContentFileParser.parseStickerPacks(contentsInputStream);
-        } catch (IOException | IllegalStateException e) {
+        } catch (@NonNull IOException | IllegalStateException e) {
             throw new RuntimeException(CONTENT_FILE_NAME + " file has some issues: " + e.getMessage(), e);
         }
     }
@@ -160,10 +162,12 @@ public class StickerContentProvider extends ContentProvider {
         return stickerPackList;
     }
 
+    @NonNull
     private Cursor getPackForAllStickerPacks(@NonNull Uri uri) {
         return getStickerPackInfo(uri, getStickerPackList());
     }
 
+    @NonNull
     private Cursor getCursorForSingleStickerPack(@NonNull Uri uri) {
         final String identifier = uri.getLastPathSegment();
         for (StickerPack stickerPack : getStickerPackList()) {
@@ -226,7 +230,8 @@ public class StickerContentProvider extends ContentProvider {
         return cursor;
     }
 
-    private AssetFileDescriptor getImageAsset(Uri uri) throws IllegalArgumentException {
+    @Nullable
+    private AssetFileDescriptor getImageAsset(@NonNull Uri uri) throws IllegalArgumentException {
         AssetManager am = Objects.requireNonNull(getContext()).getAssets();
         final List<String> pathSegments = uri.getPathSegments();
         if (pathSegments.size() != 3) {
@@ -257,6 +262,7 @@ public class StickerContentProvider extends ContentProvider {
         return null;
     }
 
+    @Nullable
     private AssetFileDescriptor fetchFile(@NonNull Uri uri, @NonNull AssetManager am, @NonNull String fileName, @NonNull String identifier) {
         try {
             return am.openFd(identifier + "/" + fileName);
@@ -272,6 +278,7 @@ public class StickerContentProvider extends ContentProvider {
         throw new UnsupportedOperationException("Not supported");
     }
 
+    @NonNull
     @Override
     public Uri insert(@NonNull Uri uri, ContentValues values) {
         throw new UnsupportedOperationException("Not supported");

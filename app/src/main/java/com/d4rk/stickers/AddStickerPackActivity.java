@@ -19,6 +19,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
@@ -27,7 +28,7 @@ public abstract class AddStickerPackActivity extends BaseActivity {
     private static final int ADD_PACK = 200;
     private static final String TAG = "AddStickerPackActivity";
 
-    protected void addStickerPackToWhatsApp(String identifier, String stickerPackName) {
+    protected void addStickerPackToWhatsApp(@NonNull String identifier, String stickerPackName) {
         try {
             //if neither WhatsApp Consumer or WhatsApp Business is installed, then tell user to install the apps.
             if (WhitelistCheck.isWhatsAppConsumerAppInstalled(getPackageManager()) && WhitelistCheck.isWhatsAppSmbAppInstalled(getPackageManager())) {
@@ -85,7 +86,7 @@ public abstract class AddStickerPackActivity extends BaseActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == ADD_PACK) {
             if (resultCode == Activity.RESULT_CANCELED) {

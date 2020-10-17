@@ -25,11 +25,11 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
     private final int cellPadding;
     private final int errorResource;
 
+    @NonNull
     private final LayoutInflater layoutInflater;
 
     StickerPreviewAdapter(
             @NonNull final LayoutInflater layoutInflater,
-            final int errorResource,
             final int cellSize,
             final int cellPadding,
             @NonNull final StickerPack stickerPack) {
@@ -37,7 +37,7 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
         this.cellPadding = cellPadding;
         this.cellLimit = 0;
         this.layoutInflater = layoutInflater;
-        this.errorResource = errorResource;
+        this.errorResource = R.drawable.sticker_error;
         this.stickerPack = stickerPack;
     }
 
