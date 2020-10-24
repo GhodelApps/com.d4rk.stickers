@@ -1026,6 +1026,10 @@
         },
         {
           "image_file": "16.webp",
+          "emojis": ["😆","😂"]
+        },
+        {
+          "image_file": "17.webp",
           "emojis": ["🔋","😵"]
         }
       ]
