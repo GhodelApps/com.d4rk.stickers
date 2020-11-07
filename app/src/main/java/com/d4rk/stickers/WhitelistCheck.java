@@ -1,13 +1,4 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package com.d4rk.stickers;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -15,9 +6,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
 import android.database.Cursor;
 import android.net.Uri;
-
 import androidx.annotation.NonNull;
-
 class WhitelistCheck {
     private static final String AUTHORITY_QUERY_PARAM = "authority";
     private static final String IDENTIFIER_QUERY_PARAM = "identifier";
@@ -27,7 +16,6 @@ class WhitelistCheck {
     private static final String CONTENT_PROVIDER = ".provider.sticker_whitelist_check";
     private static final String QUERY_PATH = "is_whitelisted";
     private static final String QUERY_RESULT_COLUMN_NAME = "result";
-
     static boolean isWhitelisted(@NonNull Context context, @NonNull String identifier) {
         try {
             if (isWhatsAppConsumerAppInstalled(context.getPackageManager()) && isWhatsAppSmbAppInstalled(context.getPackageManager())) {
@@ -40,7 +28,6 @@ class WhitelistCheck {
             return false;
         }
     }
-
     private static boolean isWhitelistedFromProvider(@NonNull Context context, @NonNull String identifier, String whatsappPackageName) {
         final PackageManager packageManager = context.getPackageManager();
         if (isPackageInstalled(whatsappPackageName, packageManager)) {
@@ -58,16 +45,13 @@ class WhitelistCheck {
                 }
             }
         } else {
-            //if app is not installed, then don't need to take into its whitelist info into account.
             return true;
         }
         return false;
     }
-
     static boolean isPackageInstalled(String packageName, @NonNull PackageManager packageManager) {
         try {
             final ApplicationInfo applicationInfo = packageManager.getApplicationInfo(packageName, 0);
-            //noinspection SimplifiableIfStatement
             if (applicationInfo != null) {
                 return applicationInfo.enabled;
             } else {
@@ -77,19 +61,15 @@ class WhitelistCheck {
             return false;
         }
     }
-
     static boolean isWhatsAppConsumerAppInstalled(@NonNull PackageManager packageManager) {
         return !WhitelistCheck.isPackageInstalled(CONSUMER_WHATSAPP_PACKAGE_NAME, packageManager);
     }
-
     static boolean isWhatsAppSmbAppInstalled(@NonNull PackageManager packageManager) {
         return !WhitelistCheck.isPackageInstalled(SMB_WHATSAPP_PACKAGE_NAME, packageManager);
     }
-
     static boolean isStickerPackWhitelistedInWhatsAppConsumer(@NonNull Context context, @NonNull String identifier) {
         return isWhitelistedFromProvider(context, identifier, CONSUMER_WHATSAPP_PACKAGE_NAME);
     }
-
     static boolean isStickerPackWhitelistedInWhatsAppSmb(@NonNull Context context, @NonNull String identifier) {
         return isWhitelistedFromProvider(context, identifier, SMB_WHATSAPP_PACKAGE_NAME);
     }

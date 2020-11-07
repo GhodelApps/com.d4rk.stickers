@@ -1,21 +1,10 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package com.d4rk.stickers;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.text.TextUtils;
-
 import androidx.annotation.NonNull;
-
+import android.text.TextUtils;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,10 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-
 import static com.d4rk.stickers.StickerContentProvider.ANDROID_APP_DOWNLOAD_LINK_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.AVOID_CACHE;
-import static com.d4rk.stickers.StickerContentProvider.IMAGE_DATA_VERSION;
 import static com.d4rk.stickers.StickerContentProvider.IOS_APP_DOWNLOAD_LINK_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.LICENSE_AGREENMENT_WEBSITE;
 import static com.d4rk.stickers.StickerContentProvider.PRIVACY_POLICY_WEBSITE;
@@ -38,14 +25,10 @@ import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_ICON_IN_QUER
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_IDENTIFIER_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_NAME_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_PUBLISHER_IN_QUERY;
-
+import static com.d4rk.stickers.StickerContentProvider.IMAGE_DATA_VERSION;
 class StickerPackLoader {
-
-    /**
-     * Get the list of sticker packs for the sticker content provider
-     */
     @NonNull
-    static ArrayList<StickerPack> fetchStickerPacks(@NonNull Context context) throws IllegalStateException {
+    static ArrayList<StickerPack> fetchStickerPacks(Context context) throws IllegalStateException {
         final Cursor cursor = context.getContentResolver().query(StickerContentProvider.AUTHORITY_URI, null, null, null, null);
         if (cursor == null) {
             throw new IllegalStateException("could not fetch from content provider, " + BuildConfig.CONTENT_PROVIDER_AUTHORITY);
@@ -69,9 +52,8 @@ class StickerPackLoader {
         }
         return stickerPackList;
     }
-
     @NonNull
-    private static List<Sticker> getStickersForPack(@NonNull Context context, @NonNull StickerPack stickerPack) {
+    private static List<Sticker> getStickersForPack(Context context, StickerPack stickerPack) {
         final List<Sticker> stickers = fetchFromContentProviderForStickers(stickerPack.identifier, context.getContentResolver());
         for (Sticker sticker : stickers) {
             final byte[] bytes;
@@ -81,16 +63,14 @@ class StickerPackLoader {
                     throw new IllegalStateException("Asset file is empty, pack: " + stickerPack.name + ", sticker: " + sticker.imageFileName);
                 }
                 sticker.setSize(bytes.length);
-            } catch (@NonNull IOException | IllegalArgumentException e) {
+            } catch (IOException | IllegalArgumentException e) {
                 throw new IllegalStateException("Asset file doesn't exist. pack: " + stickerPack.name + ", sticker: " + sticker.imageFileName, e);
             }
         }
         return stickers;
     }
-
-
     @NonNull
-    private static ArrayList<StickerPack> fetchFromContentProvider(@NonNull Cursor cursor) {
+    private static ArrayList<StickerPack> fetchFromContentProvider(Cursor cursor) {
         ArrayList<StickerPack> stickerPackList = new ArrayList<>();
         cursor.moveToFirst();
         do {
@@ -113,11 +93,9 @@ class StickerPackLoader {
         } while (cursor.moveToNext());
         return stickerPackList;
     }
-
     @NonNull
-    private static List<Sticker> fetchFromContentProviderForStickers(String identifier, @NonNull ContentResolver contentResolver) {
+    private static List<Sticker> fetchFromContentProviderForStickers(String identifier, ContentResolver contentResolver) {
         Uri uri = getStickerListUri(identifier);
-
         final String[] projection = {STICKER_FILE_NAME_IN_QUERY, STICKER_FILE_EMOJI_IN_QUERY};
         final Cursor cursor = contentResolver.query(uri, projection, null, null, null);
         List<Sticker> stickers = new ArrayList<>();
@@ -138,9 +116,7 @@ class StickerPackLoader {
         }
         return stickers;
     }
-
-    @NonNull
-    static byte[] fetchStickerAsset(@NonNull final String identifier, @NonNull final String name, @NonNull ContentResolver contentResolver) throws IOException {
+    static byte[] fetchStickerAsset(@NonNull final String identifier, @NonNull final String name, ContentResolver contentResolver) throws IOException {
         try (final InputStream inputStream = contentResolver.openInputStream(getStickerAssetUri(identifier, name));
              final ByteArrayOutputStream buffer = new ByteArrayOutputStream()) {
             if (inputStream == null) {
@@ -155,11 +131,9 @@ class StickerPackLoader {
             return buffer.toByteArray();
         }
     }
-
     private static Uri getStickerListUri(String identifier) {
         return new Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT).authority(BuildConfig.CONTENT_PROVIDER_AUTHORITY).appendPath(StickerContentProvider.STICKERS).appendPath(identifier).build();
     }
-
     static Uri getStickerAssetUri(String identifier, String stickerName) {
         return new Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT).authority(BuildConfig.CONTENT_PROVIDER_AUTHORITY).appendPath(StickerContentProvider.STICKERS_ASSET).appendPath(identifier).appendPath(stickerName).build();
     }

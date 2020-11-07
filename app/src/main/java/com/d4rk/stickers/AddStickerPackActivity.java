@@ -1,13 +1,4 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package com.d4rk.stickers;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
@@ -17,28 +8,22 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-
 @SuppressWarnings("deprecation")
 public abstract class AddStickerPackActivity extends BaseActivity {
     private static final int ADD_PACK = 200;
     private static final String TAG = "AddStickerPackActivity";
-
-    protected void addStickerPackToWhatsApp(@NonNull String identifier, String stickerPackName) {
+    protected void addStickerPackToWhatsApp(String identifier, String stickerPackName) {
         try {
-            //if neither WhatsApp Consumer or WhatsApp Business is installed, then tell user to install the apps.
-            if (WhitelistCheck.isWhatsAppConsumerAppInstalled(getPackageManager()) && WhitelistCheck.isWhatsAppSmbAppInstalled(getPackageManager())) {
+            if (!WhitelistCheck.isWhatsAppConsumerAppInstalled(getPackageManager()) && !WhitelistCheck.isWhatsAppSmbAppInstalled(getPackageManager())) {
                 Toast.makeText(this, R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show();
                 return;
             }
             final boolean stickerPackWhitelistedInWhatsAppConsumer = WhitelistCheck.isStickerPackWhitelistedInWhatsAppConsumer(this, identifier);
             final boolean stickerPackWhitelistedInWhatsAppSmb = WhitelistCheck.isStickerPackWhitelistedInWhatsAppSmb(this, identifier);
             if (!stickerPackWhitelistedInWhatsAppConsumer && !stickerPackWhitelistedInWhatsAppSmb) {
-                //ask users which app to add the pack to.
                 launchIntentToAddPackToChooser(identifier, stickerPackName);
             } else if (!stickerPackWhitelistedInWhatsAppConsumer) {
                 launchIntentToAddPackToSpecificPackage(identifier, stickerPackName, WhitelistCheck.CONSUMER_WHATSAPP_PACKAGE_NAME);
@@ -51,10 +36,7 @@ public abstract class AddStickerPackActivity extends BaseActivity {
             Log.e(TAG, "error adding sticker pack to WhatsApp", e);
             Toast.makeText(this, R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show();
         }
-
     }
-
-    @SuppressWarnings("deprecation")
     private void launchIntentToAddPackToSpecificPackage(String identifier, String stickerPackName, String whatsappPackageName) {
         Intent intent = createIntentToAddStickerPack(identifier, stickerPackName);
         intent.setPackage(whatsappPackageName);
@@ -64,8 +46,6 @@ public abstract class AddStickerPackActivity extends BaseActivity {
             Toast.makeText(this, R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show();
         }
     }
-
-    //Handle cases either of WhatsApp are set as default app to handle this intent. We still want users to see both options.
     private void launchIntentToAddPackToChooser(String identifier, String stickerPackName) {
         Intent intent = createIntentToAddStickerPack(identifier, stickerPackName);
         try {
@@ -74,7 +54,6 @@ public abstract class AddStickerPackActivity extends BaseActivity {
             Toast.makeText(this, R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show();
         }
     }
-
     @NonNull
     private Intent createIntentToAddStickerPack(String identifier, String stickerPackName) {
         Intent intent = new Intent();
@@ -84,9 +63,8 @@ public abstract class AddStickerPackActivity extends BaseActivity {
         intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_NAME, stickerPackName);
         return intent;
     }
-
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == ADD_PACK) {
             if (resultCode == Activity.RESULT_CANCELED) {
@@ -105,7 +83,6 @@ public abstract class AddStickerPackActivity extends BaseActivity {
             }
         }
     }
-
     public static final class StickerPackNotAddedMessageFragment extends DialogFragment {
         @NonNull
         @Override
@@ -118,7 +95,6 @@ public abstract class AddStickerPackActivity extends BaseActivity {
 
             return dialogBuilder.create();
         }
-
         private void launchWhatsAppPlayStorePage() {
             if (getActivity() != null) {
                 final PackageManager packageManager = getActivity().getPackageManager();
@@ -134,7 +110,6 @@ public abstract class AddStickerPackActivity extends BaseActivity {
                 }
             }
         }
-
         private void launchPlayStoreWithUri(String uriString) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(uriString));

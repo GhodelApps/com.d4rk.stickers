@@ -1,13 +1,4 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package com.d4rk.stickers;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,16 +6,12 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 import android.webkit.URLUtil;
-
 import androidx.annotation.NonNull;
-
 import com.facebook.animated.webp.WebPImage;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
-
 class StickerPackValidator {
     private static final int STICKER_FILE_SIZE_LIMIT_KB = 6969;
     static final int EMOJI_MAX_LIMIT = 3;
@@ -40,11 +27,6 @@ class StickerPackValidator {
     private static final int TRAY_IMAGE_DIMENSION_MAX = 512;
     private static final String PLAY_STORE_DOMAIN = "play.google.com";
     private static final String APPLE_STORE_DOMAIN = "itunes.apple.com";
-
-
-    /**
-     * Checks whether a sticker pack contains valid data
-     */
     static void verifyStickerPackValidity(@NonNull Context context, @NonNull StickerPack stickerPack) throws IllegalStateException {
         if (TextUtils.isEmpty(stickerPack.identifier)) {
             throw new IllegalStateException("sticker pack identifier is empty");
@@ -115,7 +97,6 @@ class StickerPackValidator {
             validateSticker(context, stickerPack.identifier, sticker);
         }
     }
-
     private static void validateSticker(@NonNull Context context, @NonNull final String identifier, @NonNull final Sticker sticker) throws IllegalStateException {
         if (sticker.emojis.size() > EMOJI_MAX_LIMIT) {
             throw new IllegalStateException("emoji count exceed limit, sticker pack identifier:" + identifier + ", filename:" + sticker.imageFileName);
@@ -128,7 +109,6 @@ class StickerPackValidator {
         }
         validateStickerFile(context, identifier, sticker.imageFileName);
     }
-
     private static void validateStickerFile(@NonNull Context context, @NonNull String identifier, @NonNull final String fileName) throws IllegalStateException {
         try {
             final byte[] bytes = StickerPackLoader.fetchStickerAsset(identifier, fileName, context.getContentResolver());
@@ -153,7 +133,6 @@ class StickerPackValidator {
             throw new IllegalStateException("cannot open sticker file: sticker pack identifier:" + identifier + ", filename:" + fileName, e);
         }
     }
-
     private static void checkStringValidity(@NonNull String string) {
         String pattern = "[\\w-.,'\\s]+"; // [a-zA-Z0-9_-.' ]
         if (!string.matches(pattern)) {
@@ -163,7 +142,6 @@ class StickerPackValidator {
             throw new IllegalStateException(string + " cannot contain ..");
         }
     }
-
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     private static boolean isValidWebsiteUrl(String websiteUrl) throws IllegalStateException {
         try {
@@ -175,7 +153,6 @@ class StickerPackValidator {
         return URLUtil.isHttpUrl(websiteUrl) || URLUtil.isHttpsUrl(websiteUrl);
 
     }
-
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     private static boolean isURLInCorrectDomain(String urlString, @NonNull String domain) throws IllegalStateException {
         try {

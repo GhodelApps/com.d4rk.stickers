@@ -1,32 +1,17 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package com.d4rk.stickers;
-
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 class StickerPackListItemViewHolder extends RecyclerView.ViewHolder {
-
-    @NonNull
     final View container;
     final TextView titleView;
     final TextView publisherView;
     final TextView filesizeView;
     final ImageView addButton;
     final LinearLayout imageRowView;
-
-    StickerPackListItemViewHolder(@NonNull final View itemView) {
+    StickerPackListItemViewHolder(final View itemView) {
         super(itemView);
         container = itemView;
         titleView = itemView.findViewById(R.id.sticker_pack_title);

@@ -1,23 +1,19 @@
 apply plugin: 'com.android.application'
-
 android {
-    //the compression of webp file during build causes problem with FileDescriptor in ContentProvider.
     aaptOptions {
         noCompress "webp"
     }
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.d4rk.stickers"
-        minSdkVersion 29
+        minSdkVersion 14
         targetSdkVersion 30
         versionCode 16
-        versionName '3.0 (beta)'
+        versionName '3.0 (Beta)'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
-        // Creates a placeholder property to use in the manifest.
         manifestPlaceholders =
                 [contentProviderAuthority: contentProviderAuthority]
-        // Adds a new field for the authority to the BuildConfig class.
         buildConfigField("String",
                 "CONTENT_PROVIDER_AUTHORITY",
                 "\"${contentProviderAuthority}\"")
@@ -32,13 +28,14 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable true
+            jniDebuggable true
         }
     }
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
-
     packagingOptions {
         exclude 'lib/*/libnative-imagetranscoder.so'
         exclude 'lib/*/libnative-filters.so'
@@ -48,17 +45,7 @@ android {
     dependenciesInfo {
         includeInApk false
     }
-
-    // Configures multiple APKs based on ABI.
-    // see https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split
-//    splits {
-//        abi {
-//            enable true // Enables building multiple APKs per ABI.
-//            universalApk true // Specifies that we want to also generate a universal APK that includes all ABIs.
-//        }
-//    }
 }
-
 task checkDebug {
     doLast {
         println("checkDebug")
@@ -68,7 +55,6 @@ task checkDebug {
         checkApplicationIdInDebug()
     }
 }
-
 private void checkApplicationIdInDebug() {
     Properties properties = new Properties()
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -79,7 +65,6 @@ private void checkApplicationIdInDebug() {
         println("application id check ignored")
     }
 }
-
 task checkRelease {
     doLast {
         println("checkRelease")
@@ -88,7 +73,6 @@ task checkRelease {
         }
     }
 }
-
 tasks.whenTaskAdded { task ->
     println(task.name)
     if (task.name.contains("assembleDebug")) {
@@ -98,7 +82,6 @@ tasks.whenTaskAdded { task ->
         task.dependsOn checkRelease
     }
 }
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.3.0-alpha02'

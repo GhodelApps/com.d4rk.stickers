@@ -1,33 +1,19 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package com.d4rk.stickers;
-
 import android.text.TextUtils;
 import android.util.JsonReader;
-
 import androidx.annotation.NonNull;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
 class ContentFileParser {
-
     @NonNull
     static List<StickerPack> parseStickerPacks(@NonNull InputStream contentsInputStream) throws IOException, IllegalStateException {
         try (JsonReader reader = new JsonReader(new InputStreamReader(contentsInputStream))) {
             return readStickerPacks(reader);
         }
     }
-
     @NonNull
     private static List<StickerPack> readStickerPacks(@NonNull JsonReader reader) throws IOException, IllegalStateException {
         List<StickerPack> stickerPackList = new ArrayList<>();
@@ -61,7 +47,6 @@ class ContentFileParser {
         }
         return stickerPackList;
     }
-
     @NonNull
     private static StickerPack readStickerPack(@NonNull JsonReader reader) throws IOException, IllegalStateException {
         reader.beginObject();
@@ -143,12 +128,10 @@ class ContentFileParser {
         stickerPack.setStickers(stickerList);
         return stickerPack;
     }
-
     @NonNull
     private static List<Sticker> readStickers(@NonNull JsonReader reader) throws IOException, IllegalStateException {
         reader.beginArray();
         List<Sticker> stickerList = new ArrayList<>();
-
         while (reader.hasNext()) {
             reader.beginObject();
             String imageFile = null;

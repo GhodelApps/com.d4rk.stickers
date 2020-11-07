@@ -1,33 +1,18 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package com.d4rk.stickers;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewViewHolder> {
-
     @NonNull
     private final StickerPack stickerPack;
-
     private final int cellSize;
     private final int cellLimit;
     private final int cellPadding;
     private final int errorResource;
-
     @NonNull
     private final LayoutInflater layoutInflater;
-
     StickerPreviewAdapter(
             @NonNull final LayoutInflater layoutInflater,
             final int cellSize,
@@ -40,7 +25,6 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
         this.errorResource = R.drawable.sticker_error;
         this.stickerPack = stickerPack;
     }
-
     @NonNull
     @Override
     public StickerPreviewViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
@@ -52,16 +36,13 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
         layoutParams.width = cellSize;
         vh.stickerPreviewView.setLayoutParams(layoutParams);
         vh.stickerPreviewView.setPadding(cellPadding, cellPadding, cellPadding, cellPadding);
-
         return vh;
     }
-
     @Override
     public void onBindViewHolder(@NonNull final StickerPreviewViewHolder stickerPreviewViewHolder, final int i) {
         stickerPreviewViewHolder.stickerPreviewView.setImageResource(errorResource);
         stickerPreviewViewHolder.stickerPreviewView.setImageURI(StickerPackLoader.getStickerAssetUri(stickerPack.identifier, stickerPack.getStickers().get(i).imageFileName));
     }
-
     @Override
     public int getItemCount() {
         int numberOfPreviewImagesInPack;

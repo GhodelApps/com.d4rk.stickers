@@ -1,20 +1,7 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package com.d4rk.stickers;
-
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import androidx.annotation.NonNull;
-
 import java.util.List;
-
 class StickerPack implements Parcelable {
     final String identifier;
     final String name;
@@ -26,13 +13,11 @@ class StickerPack implements Parcelable {
     final String licenseAgreementWebsite;
     final String imageDataVersion;
     final boolean avoidCache;
-
     String iosAppStoreLink;
     private List<Sticker> stickers;
     private long totalSize;
     String androidPlayStoreLink;
     private boolean isWhitelisted;
-
     StickerPack(String identifier, String name, String publisher, String trayImageFile, String publisherEmail, String publisherWebsite, String privacyPolicyWebsite, String licenseAgreementWebsite, String imageDataVersion, boolean avoidCache) {
         this.identifier = identifier;
         this.name = name;
@@ -45,16 +30,13 @@ class StickerPack implements Parcelable {
         this.imageDataVersion = imageDataVersion;
         this.avoidCache = avoidCache;
     }
-
     void setIsWhitelisted(boolean isWhitelisted) {
         this.isWhitelisted = isWhitelisted;
     }
-
     boolean getIsWhitelisted() {
         return isWhitelisted;
     }
-
-    private StickerPack(@NonNull Parcel in) {
+    private StickerPack(Parcel in) {
         identifier = in.readString();
         name = in.readString();
         publisher = in.readString();
@@ -71,52 +53,41 @@ class StickerPack implements Parcelable {
         imageDataVersion = in.readString();
         avoidCache = in.readByte() != 0;
     }
-
     public static final Creator<StickerPack> CREATOR = new Creator<StickerPack>() {
-        @NonNull
         @Override
-        public StickerPack createFromParcel(@NonNull Parcel in) {
+        public StickerPack createFromParcel(Parcel in) {
             return new StickerPack(in);
         }
-
-        @NonNull
         @Override
         public StickerPack[] newArray(int size) {
             return new StickerPack[size];
         }
     };
-
-    void setStickers(@NonNull List<Sticker> stickers) {
+    void setStickers(List<Sticker> stickers) {
         this.stickers = stickers;
         totalSize = 0;
         for (Sticker sticker : stickers) {
             totalSize += sticker.size;
         }
     }
-
     void setAndroidPlayStoreLink(String androidPlayStoreLink) {
         this.androidPlayStoreLink = androidPlayStoreLink;
     }
-
     void setIosAppStoreLink(String iosAppStoreLink) {
         this.iosAppStoreLink = iosAppStoreLink;
     }
-
     List<Sticker> getStickers() {
         return stickers;
     }
-
     long getTotalSize() {
         return totalSize;
     }
-
     @Override
     public int describeContents() {
         return 0;
     }
-
     @Override
-    public void writeToParcel(@NonNull Parcel dest, int flags) {
+    public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(identifier);
         dest.writeString(name);
         dest.writeString(publisher);

@@ -11,9 +11,10 @@
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:debuggable="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="HardcodedDebugMode">
         <activity android:name="com.d4rk.stickers.EntryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,12 +39,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.d4rk.stickers.StickerPackDetailsActivity" />
         </activity>
-
         <provider
             android:name="com.d4rk.stickers.StickerContentProvider"
             android:authorities="${contentProviderAuthority}"
             android:enabled="true"
             android:exported="true"
-            android:readPermission="com.whatsapp.sticker.READ" />
+            android:readPermission="com.whatsapp.sticker.READ"
+            android:writePermission="com.whatsapp.sticker.WRITE"/>
     </application>
 </manifest>

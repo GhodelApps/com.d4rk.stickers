@@ -1,27 +1,14 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package com.d4rk.stickers;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-
 @SuppressWarnings("ALL")
 public class StickerPackListActivity extends AddStickerPackActivity {
     public static final String EXTRA_STICKER_PACK_LIST_DATA = "sticker_pack_list";
@@ -31,7 +18,6 @@ public class StickerPackListActivity extends AddStickerPackActivity {
     private StickerPackListAdapter allStickerPacksListAdapter;
     private WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     private ArrayList<StickerPack> stickerPackList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,14 +30,12 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         }
 
     }
-
     @Override
     protected void onResume() {
         super.onResume();
         whiteListCheckAsyncTask = new WhiteListCheckAsyncTask(this);
         whiteListCheckAsyncTask.execute(stickerPackList.toArray(new StickerPack[0]));
     }
-
     @Override
     protected void onPause() {
         super.onPause();
@@ -59,7 +43,6 @@ public class StickerPackListActivity extends AddStickerPackActivity {
             whiteListCheckAsyncTask.cancel(true);
         }
     }
-
     private void showStickerPackList(@NonNull List<StickerPack> stickerPackList) {
         allStickerPacksListAdapter = new StickerPackListAdapter(stickerPackList, onAddButtonClickedListener);
         packRecyclerView.setAdapter(allStickerPacksListAdapter);
@@ -73,11 +56,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         packRecyclerView.setLayoutManager(packLayoutManager);
         packRecyclerView.getViewTreeObserver().addOnGlobalLayoutListener(this::recalculateColumnCount);
     }
-
-
     private final StickerPackListAdapter.OnAddButtonClickedListener onAddButtonClickedListener = pack -> addStickerPackToWhatsApp(pack.identifier, pack.name);
-
-
     private void recalculateColumnCount() {
         final int previewSize = getResources().getDimensionPixelSize(R.dimen.sticker_pack_list_item_preview_image_size);
         int firstVisibleItemPosition = packLayoutManager.findFirstVisibleItemPosition();
@@ -90,16 +69,12 @@ public class StickerPackListActivity extends AddStickerPackActivity {
             allStickerPacksListAdapter.setImageRowSpec(maxNumberOfImagesInARow, minMarginBetweenImages);
         }
     }
-
-
     static class WhiteListCheckAsyncTask extends AsyncTask<StickerPack, Void, List<StickerPack>> {
         @NonNull
         private final WeakReference<StickerPackListActivity> stickerPackListActivityWeakReference;
-
         WhiteListCheckAsyncTask(StickerPackListActivity stickerPackListActivity) {
             this.stickerPackListActivityWeakReference = new WeakReference<>(stickerPackListActivity);
         }
-
         @NonNull
         @Override
         protected final List<StickerPack> doInBackground(@NonNull StickerPack... stickerPackArray) {
@@ -112,7 +87,6 @@ public class StickerPackListActivity extends AddStickerPackActivity {
             }
             return Arrays.asList(stickerPackArray);
         }
-
         @Override
         protected void onPostExecute(@NonNull List<StickerPack> stickerPackList) {
             final StickerPackListActivity stickerPackListActivity = stickerPackListActivityWeakReference.get();

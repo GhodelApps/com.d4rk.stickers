@@ -11,13 +11,11 @@
     app:cardUseCompatPadding="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:orientation="vertical">
-
         <TextView
             android:id="@+id/tray_icon"
             style="@style/InfoButtonStyle"
@@ -26,40 +24,31 @@
             android:textColor="#673AB7"
             tools:drawableLeft="@drawable/sticker_3rdparty_d4rk"
             tools:drawableStart="@drawable/sticker_3rdparty_d4rk" />
-
         <TextView
             android:id="@+id/view_webpage"
             style="@style/InfoButtonStyle"
             android:text="@string/view_webpage"
             app:drawableStartCompat="@drawable/sticker_3rdparty_youtube" />
-
         <TextView
             android:id="@+id/send_email"
             style="@style/InfoButtonStyle"
             android:text="@string/send_email"
             app:drawableStartCompat="@drawable/sticker_3rdparty_email" />
-
         <TextView
             android:id="@+id/license_agreement"
             style="@style/InfoButtonStyle"
             android:text="@string/license_agreement"
             app:drawableStartCompat="@drawable/sticker_3rdparty_license" />
-
         <TextView
             android:id="@+id/privacy_policy"
             style="@style/InfoButtonStyle"
             android:text="@string/privacy_policy"
             app:drawableStartCompat="@drawable/sticker_3rdparty_privacy" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:accessibilityLiveRegion="polite"
-            android:requiresFadingEdge="vertical"
-            android:selectAllOnFocus="true"
-            android:singleLine="false"
             android:text="@string/changelog"
-            android:textAlignment="center" />
-
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
