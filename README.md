@@ -17,9 +17,9 @@
     height="90">](https://www.patreon.com/d4rk7355608)
 [<img src="https://logos-download.com/wp-content/uploads/2016/03/PayPal_logo_logotype_emblem.png"
     alt="PayPall"
-    height="90">](https://logos-download.com/wp-content/uploads/2016/03/PayPal_logo_logotype_emblem.png)
+    height="90">](https://www.paypal.me/d4rkmichaeltutorials)
 
-High quality stickers for WhatsApp Messenger upgraded to Android 11 (API 30) with simple and clean material design inspired by Google.
+High quality stickers for WhatsApp Messenger upgraded to be compatible with Android 11 (API 30) with simple and clean material design inspired by Google.
 
 D4rK Stickers it made to make everything simple to use and using latest scripts to make a better experience.
 
@@ -43,7 +43,7 @@ Changelogs:
 
 Version 3.0 (beta):
 - Added splash screen;
-- Android 4.0 ISC (API 14) is minimum SDK now;
+- Android 4.3 ISC (API 18) is minimum SDK now;
 - Performance &amp; other optimizations;
 - New adaptive Dark Mode;
 - New icons;
