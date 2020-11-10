@@ -1,5 +1,5 @@
 # D4rK Stickers 3.0 (Beta)
-![logo](https://github.com/D4rK7355608/com.d4rk.stickers/blob/master/app/src/main/res/drawable-xxxhdpi/ic_splash_screen_d4rk.png)
+![logo](https://github.com/D4rK7355608/com.d4rk.stickers/blob/master/app/src/main/res/drawable-xxxhdpi/ic_splash_screen_d4rk.png) ![logo](https://github.com/D4rK7355608/com.d4rk.stickers/blob/master/app/src/main/res/drawable-xxxhdpi/d4rk.png)
 
 # Fun stickers for WhatsApp Messenger with material design by D4rK!
 
@@ -8,7 +8,10 @@
      height="90">](https://f-droid.org/packages/d4rk/)
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
     alt="Get it on Google Play"
-    height="90">](https://play.google.com/store/apps/details?id=d4rk)
+    height="90">](https://play.google.com/store/apps/dev?id=5390214922640123642)
+[<img src="https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube-logo-full_color_light.svg?cache=72a5d9c"
+    alt="YouTube"
+    height="90">](https://www.youtube.com/channel/UCLDi-rmSRry0pNL-oVvGJAw/featured)
 
 Tired of the abundance of phone cleaners on the play store? Tired of 
 them being extremely shady? Tired of them doing nothing? Tired of ads? 
@@ -20,7 +23,7 @@ D4rK Cleaner only aims to clean your phone by removing safe to delete files, whi
 __D4rK Stickers is 100% free, open source, ad free, and fun.__
 
 Known bugs:
-- "Sticker pack not added. If you'd like to add it make sure you update to the latest version of WhatsApp." on Android 11;
+- "Sticker pack not added. If you'd like to add it make sure you update to the latest version of WhatsApp." on Android 11 and AOSP;
 - Dark notification bar when dark mode is on on Pixel/AOSP devices.
     
 Changelogs:
