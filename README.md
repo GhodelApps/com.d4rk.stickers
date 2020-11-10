@@ -21,6 +21,7 @@ __D4rK Stickers is 100% free, open source, ad free, and fun.__
 
 Changelogs:
 Version 3.0 (beta):
+
     -Added splash screen;
     -Android 4.0 ISC (API 14) is minimum SDK now;
     -Performance &amp; other optimizations;
@@ -36,6 +37,7 @@ Version 3.0 (beta):
     -Bug fixes.
 
 Version 2.0:
+
     -Changelog added;
     -Compatibility with Android R;
     -Gradle scripts updated;
@@ -45,6 +47,7 @@ Version 2.0:
     -New stickers.
 
 Version 1.0:
+
     -Initial release.
 
 ![screenshot]()
