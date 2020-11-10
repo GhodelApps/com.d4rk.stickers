@@ -19,12 +19,17 @@
     alt="PayPall"
     height="90">](https://logos-download.com/wp-content/uploads/2016/03/PayPal_logo_logotype_emblem.png)
 
-Tired of the abundance of phone cleaners on the play store? Tired of 
-them being extremely shady? Tired of them doing nothing? Tired of ads? 
-Tired of having to pay? Me too.
+High quality stickers for WhatsApp Messenger upgraded to Android 11 (API 30) with simple and clean material design inspired by Google.
 
-There are simply way too many apps out there that claim to speed up your device. In reality, they don't do anything.
-D4rK Cleaner only aims to clean your phone by removing safe to delete files, which not only frees up a lot of space, but also improve your privacy. Since D4rK Cleaner removes .log files, which well, log what you do.
+D4rK Stickers it made to make everything simple to use and using latest scripts to make a better experience.
+
+Bugs can be reported here.
+
+Opening Issues ⚠️
+Only use the GitHub Issues section if you discovered issues with the code itself. Do not mistake the Issues page as a help desk. You can ask for help at Stack Overflow.
+For support, please contact d4rk7355608@gmail.com for more informations.
+
+- Create an Android/general issue/bug.
 
 __D4rK Stickers is 100% free, open source, ad free, and fun for everyone.__
 
