@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+
 android {
     aaptOptions {
         noCompress "webp"
@@ -28,8 +29,6 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            debuggable true
-            jniDebuggable true
         }
     }
     compileOptions {
@@ -55,13 +54,14 @@ task checkDebug {
         checkApplicationIdInDebug()
     }
 }
-
-@SuppressWarnings('GroovyEmptyStatementBody')
 private void checkApplicationIdInDebug() {
     Properties properties = new Properties()
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
     def ignoreApplicationIdCheck = properties.getProperty('ignoreApplicationIdCheck')
     if (ignoreApplicationIdCheck == null) {
+        if (android.defaultConfig.applicationId == "com.example.samplestickerapp") {
+            throw new GradleException("Your applicationId is currently com.example.samplestickerapp, please change your applicationId to a different string in app/build.gradle in line 10")
+        }
     } else {
         println("application id check ignored")
     }
