@@ -15,7 +15,7 @@
 [<img src="https://i.dlpng.com/static/png/6489133_preview.png"
     alt="Patreon"
     height="90">](https://www.patreon.com/d4rk7355608)
-[<img src="https://logos-download.com/wp-content/uploads/2016/03/PayPal_logo_logotype_emblem.png
+[<img src="https://logos-download.com/wp-content/uploads/2016/03/PayPal_logo_logotype_emblem.png"
     alt="PayPall"
     height="90">](https://logos-download.com/wp-content/uploads/2016/03/PayPal_logo_logotype_emblem.png)
 
