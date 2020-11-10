@@ -20,11 +20,14 @@ D4rK Cleaner only aims to clean your phone by removing safe to delete files, whi
 __D4rK Stickers is 100% free, open source, ad free, and fun.__
 
 Known bugs:
+
     - "Sticker pack not added. If you'd like to add it make sure you update to the latest version of WhatsApp." on Android 11;
     - Dark notification bar when dark mode is on on Pixel/AOSP devices.
     
 Changelogs:
+
 Version 3.0 (beta):
+
     - Added splash screen;
     - Android 4.0 ISC (API 14) is minimum SDK now;
     - Performance &amp; other optimizations;
@@ -40,6 +43,7 @@ Version 3.0 (beta):
     - Bug fixes.
 
 Version 2.0:
+
     - Changelog added;
     - Compatibility with Android R;
     - Gradle scripts updated;
@@ -49,6 +53,7 @@ Version 2.0:
     - New stickers.
 
 Version 1.0:
+
     - Initial release.
 
 ![screenshot]()
