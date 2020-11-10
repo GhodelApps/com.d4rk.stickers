@@ -7,7 +7,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.d4rk.stickers"
-        minSdkVersion 14
+        minSdkVersion 18
         targetSdkVersion 30
         versionCode 16
         versionName '3.0 (Beta)'
