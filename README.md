@@ -25,9 +25,10 @@ D4rK Stickers it made to make everything simple to use and using latest scripts 
 
 Bugs can be reported here.
 
-Opening Issues ⚠️
-Only use the GitHub Issues section if you discovered issues with the code itself. Do not mistake the Issues page as a help desk. You can ask for help at Stack Overflow.
-For support, please contact d4rk7355608@gmail.com for more informations.
+## Opening Issues :warning:
+
+> Only use the GitHub Issues section if you discovered issues with the code itself. Do not mistake the Issues page as a help desk. You can ask for help at [Stack Overflow](https://stackoverflow.com/questions/tagged/whatsapp-stickers).
+> For support, please contact <d4rk7355608@gmail.com> for more informations.
 
 - Create an Android/general issue/bug.
 
