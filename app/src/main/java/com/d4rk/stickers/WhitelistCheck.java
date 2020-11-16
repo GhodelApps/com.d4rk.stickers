@@ -52,11 +52,7 @@ class WhitelistCheck {
     static boolean isPackageInstalled(String packageName, @NonNull PackageManager packageManager) {
         try {
             final ApplicationInfo applicationInfo = packageManager.getApplicationInfo(packageName, 0);
-            if (applicationInfo != null) {
-                return applicationInfo.enabled;
-            } else {
-                return false;
-            }
+            return applicationInfo.enabled;
         } catch (PackageManager.NameNotFoundException e) {
             return false;
         }

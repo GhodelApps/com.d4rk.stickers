@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
-
 android {
     aaptOptions {
         noCompress "webp"
     }
-    compileSdkVersion 30
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.d4rk.stickers"
-        minSdkVersion 18
-        targetSdkVersion 30
+        minSdkVersion 23
+        //noinspection OldTargetApi
+        targetSdkVersion 29
         versionCode 16
         versionName '3.0 (Beta)'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -92,7 +92,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0-alpha02'
     implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha06'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    def fresco_version = '2.2.0'
+    def fresco_version = '2.3.0'
     implementation "com.facebook.fresco:fresco:$fresco_version"
     implementation "com.facebook.fresco:webpsupport:$fresco_version"
     implementation "com.facebook.fresco:animated-webp:$fresco_version"

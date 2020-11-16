@@ -35,15 +35,13 @@ Bugs can be reported here.
 __D4rK Stickers is 100% free, open source, ad free, and fun for everyone.__
 
 Known bugs:
-- "Sticker pack not added. If you'd like to add it make sure you update to the latest version of WhatsApp." on Android 11 and AOSP;
-- No text on green button;
 - Dark notification bar when dark mode is on on Pixel/AOSP devices.
     
 Changelogs:
 
 Version 3.0 (beta):
 - Added splash screen;
-- Android 4.3 ISC (API 18) is minimum SDK now;
+- Android 6.0 M (API 23) is minimum SDK now;
 - Performance &amp; other optimizations;
 - New adaptive Dark Mode;
 - New icons;

@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.IdRes;
 import androidx.annotation.RequiresApi;
-
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 public class StickerPackInfoActivity extends BaseActivity {

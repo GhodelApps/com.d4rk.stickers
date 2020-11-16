@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-@SuppressWarnings("ALL")
 public class EntryActivity extends BaseActivity {
     private View progressBar;
     private LoadListAsyncTask loadListAsyncTask;
@@ -57,7 +56,6 @@ public class EntryActivity extends BaseActivity {
             loadListAsyncTask.cancel(true);
         }
     }
-    @SuppressWarnings("deprecation")
     static class LoadListAsyncTask extends AsyncTask<Void, Void, Pair<String, ArrayList<StickerPack>>> {
         @NonNull
         private final WeakReference<EntryActivity> contextWeakReference;

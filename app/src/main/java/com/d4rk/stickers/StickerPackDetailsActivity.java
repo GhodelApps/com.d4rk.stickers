@@ -1,5 +1,4 @@
 package com.d4rk.stickers;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -15,8 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.lang.ref.WeakReference;
-
-@SuppressWarnings("ALL")
 public class StickerPackDetailsActivity extends AddStickerPackActivity {
     public static final String EXTRA_STICKER_PACK_ID = "sticker_pack_id";
     public static final String EXTRA_STICKER_PACK_AUTHORITY = "sticker_pack_authority";

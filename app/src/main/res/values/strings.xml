@@ -28,13 +28,15 @@
         <br> </br>
         -Added splash screen;\n
         <br> </br>
-        -Android 4.3 ISC (API 18) is minimum SDK now;\n
+        -Android 6.0 M (API 23) is minimum SDK now;\n
         <br> </br>
         -Performance &amp; other optimizations;\n
         <br> </br>
         -New adaptive Dark Mode;\n
         <br> </br>
         -New icons;\n
+        <br> </br>
+        -Fixed "Sticker pack not added..." on android R;\n
         <br> </br>
         -New UI;\n
         <br> </br>
