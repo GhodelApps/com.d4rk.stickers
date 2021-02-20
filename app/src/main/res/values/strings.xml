@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">D4rK Stickers</string>
     <string name="tray_image_content_description" translatable="false">Sticker Pack Tray Image</string>
     <string name="more_info_button" translatable="false">More info about sticker pack!</string>
-    <string name="add_to_whatsapp" translatable="false">Add to WhatsApp</string>
+    <string name="add_to_whatsapp" translatable="false">Add to WhatsApp!</string>
     <string name="add_button_content_description" translatable="false">Add sticker pack to WhatsApp</string>
     <plurals name="title_activity_sticker_packs_list">
         <item quantity="one" translatable="false">Sticker Pack:</item>
@@ -20,7 +20,6 @@
     <string name="add_pack_fail_prompt_update_whatsapp" translatable="false">Sticker pack not added. If you\'d like to add it, make sure you update to the latest version of WhatsApp.</string>
     <string name="add_pack_fail_prompt_update_play_link" translatable="false">Update</string>
     <string name="cannot_find_play_store" translatable="false">Google Play is not installed on the device.</string>
-    <string name="sticker_pack_animation_indicator">Animated sticker pack</string>
-    <!-- text we display at the end of sticker pack details page showing that users can tap sticker to see bigger version -->
-    <string name="sticker_pack_details_tap_to_preview" >Tap to preview sticker</string>
+    <string name="sticker_pack_animation_indicator">Animated sticker pack!</string>
+    <string name="sticker_pack_details_tap_to_preview" >Tap to preview sticker.</string>
 </resources>
