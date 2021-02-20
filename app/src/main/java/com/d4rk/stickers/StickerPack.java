@@ -1,4 +1,3 @@
-
 package com.d4rk.stickers;
 import android.os.Parcel;
 import android.os.Parcelable;

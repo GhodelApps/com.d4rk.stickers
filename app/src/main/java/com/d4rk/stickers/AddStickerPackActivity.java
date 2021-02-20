@@ -71,7 +71,6 @@ public abstract class AddStickerPackActivity extends BaseActivity {
                     final String validationError = data.getStringExtra("validation_error");
                     if (validationError != null) {
                         if (BuildConfig.DEBUG) {
-                            //validation error should be shown to developer only, not users.
                             MessageDialogFragment.newInstance(validationError).show(getSupportFragmentManager(), "validation error");
                         }
                         Log.e(TAG, "Validation failed:" + validationError);
