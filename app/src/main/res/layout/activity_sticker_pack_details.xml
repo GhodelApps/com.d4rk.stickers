@@ -45,7 +45,7 @@
             android:layout_height="15dp"
             android:layout_marginStart="4dp"
             android:contentDescription="@string/sticker_pack_animation_indicator"
-            android:src="@drawable/animated_pack_indicator"
+            android:src="@drawable/ic_animated_pack_indicator"
             app:layout_constraintBottom_toBottomOf="@+id/pack_name"
             app:layout_constraintStart_toEndOf="@+id/pack_name"
             app:layout_constraintTop_toTopOf="@+id/pack_name"
@@ -137,7 +137,7 @@
                 android:focusable="false"
                 android:foreground="@android:color/transparent"
                 android:text="@string/add_to_whatsapp"
-                app:drawableStartCompat="@drawable/sticker_3rdparty_wa"/>
+                app:drawableStartCompat="@drawable/ic_whatsapp_add"/>
         </com.google.android.material.card.MaterialCardView>
     </FrameLayout>
     <TextView

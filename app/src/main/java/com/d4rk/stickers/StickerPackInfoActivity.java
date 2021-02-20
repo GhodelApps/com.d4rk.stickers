@@ -68,6 +68,6 @@ public class StickerPackInfoActivity extends BaseActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("UseCompatLoadingForDrawables")
     private Drawable getDrawableForAllAPIs() {
-        return getDrawable(R.drawable.sticker_3rdparty_email);
+        return getDrawable(R.drawable.ic_info_gmail);
     }
 }

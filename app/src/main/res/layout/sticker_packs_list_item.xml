@@ -32,7 +32,7 @@
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/add_button_content_description"
             android:scaleType="center"
-            android:src="@drawable/sticker_3rdparty_add"
+            android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -55,7 +55,7 @@
                 android:id="@+id/sticker_pack_animation_indicator"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:src="@drawable/animated_pack_indicator"
+                android:src="@drawable/ic_animated_pack_indicator"
                 app:tint="@color/animatedStickerIndicator"
                 android:layout_marginStart="4dp"
                 android:contentDescription="@string/sticker_pack_animation_indicator"/>

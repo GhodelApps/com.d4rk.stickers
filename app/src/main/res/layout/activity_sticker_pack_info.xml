@@ -22,27 +22,27 @@
             android:clickable="false"
             android:text="@string/info_screen_tray_icon"
             android:textColor="#673AB7"
-            tools:drawableLeft="@drawable/sticker_3rdparty_d4rk"
-            tools:drawableStart="@drawable/sticker_3rdparty_d4rk"/>
+            tools:drawableLeft="@drawable/ic_sticker_d4rk"
+            tools:drawableStart="@drawable/ic_sticker_d4rk"/>
         <TextView
             android:id="@+id/view_webpage"
             style="@style/InfoButtonStyle"
             android:text="@string/view_webpage"
-            app:drawableStartCompat="@drawable/sticker_3rdparty_youtube"/>
+            app:drawableStartCompat="@drawable/ic_info_youtube"/>
         <TextView
             android:id="@+id/send_email"
             style="@style/InfoButtonStyle"
             android:text="@string/send_email"
-            app:drawableStartCompat="@drawable/sticker_3rdparty_email"/>
+            app:drawableStartCompat="@drawable/ic_info_gmail"/>
         <TextView
             android:id="@+id/license_agreement"
             style="@style/InfoButtonStyle"
             android:text="@string/license_agreement"
-            app:drawableStartCompat="@drawable/sticker_3rdparty_license"/>
+            app:drawableStartCompat="@drawable/ic_info_licence_agreement"/>
         <TextView
             android:id="@+id/privacy_policy"
             style="@style/InfoButtonStyle"
             android:text="@string/privacy_policy"
-            app:drawableStartCompat="@drawable/sticker_3rdparty_privacy"/>
+            app:drawableStartCompat="@drawable/ic_info_privacy_policy"/>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

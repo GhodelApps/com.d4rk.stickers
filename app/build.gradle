@@ -38,8 +38,8 @@ android {
         exclude 'lib/*/libnative-imagetranscoder.so'
         exclude 'lib/*/libnative-filters.so'
     }
-    buildToolsVersion '30.0.3'
-    ndkVersion '21.1.6210238 rc1'
+    buildToolsVersion '31.0.0 rc1'
+    ndkVersion '23.0.7123448 rc1'
     dependenciesInfo {
         includeInApk false
     }
