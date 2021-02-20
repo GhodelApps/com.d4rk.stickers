@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 class ContentFileParser {
     @NonNull
-    static List<StickerPack> parseStickerPacks(@NonNull InputStream contentsInputStream) throws IOException, IllegalStateException {
+    static List<com.d4rk.stickers.StickerPack> parseStickerPacks(@NonNull InputStream contentsInputStream) throws IOException, IllegalStateException {
         try (JsonReader reader = new JsonReader(new InputStreamReader(contentsInputStream))) {
             return readStickerPacks(reader);
         }
     }
     @NonNull
-    private static List<StickerPack> readStickerPacks(@NonNull JsonReader reader) throws IOException, IllegalStateException {
+    private static List<com.d4rk.stickers.StickerPack> readStickerPacks(@NonNull JsonReader reader) throws IOException, IllegalStateException {
         List<StickerPack> stickerPackList = new ArrayList<>();
         String androidPlayStoreLink = null;
         String iosAppStoreLink = null;
@@ -60,6 +60,7 @@ class ContentFileParser {
         String licenseAgreementWebsite = null;
         String imageDataVersion = "";
         boolean avoidCache = false;
+        boolean animatedStickerPack = false;
         List<Sticker> stickerList = null;
         while (reader.hasNext()) {
             String key = reader.nextName();
@@ -97,6 +98,9 @@ class ContentFileParser {
                 case "avoid_cache":
                     avoidCache = reader.nextBoolean();
                     break;
+                case "animated_sticker_pack":
+                    animatedStickerPack = reader.nextBoolean();
+                    break;
                 default:
                     reader.skipValue();
             }
@@ -124,7 +128,7 @@ class ContentFileParser {
             throw new IllegalStateException("image_data_version should not be empty");
         }
         reader.endObject();
-        final StickerPack stickerPack = new StickerPack(identifier, name, publisher, trayImageFile, publisherEmail, publisherWebsite, privacyPolicyWebsite, licenseAgreementWebsite, imageDataVersion, avoidCache);
+        final StickerPack stickerPack = new StickerPack(identifier, name, publisher, trayImageFile, publisherEmail, publisherWebsite, privacyPolicyWebsite, licenseAgreementWebsite, imageDataVersion, avoidCache, animatedStickerPack);
         stickerPack.setStickers(stickerList);
         return stickerPack;
     }
@@ -135,7 +139,7 @@ class ContentFileParser {
         while (reader.hasNext()) {
             reader.beginObject();
             String imageFile = null;
-            List<String> emojis = new ArrayList<>(StickerPackValidator.EMOJI_MAX_LIMIT);
+            List<String> emojis = new ArrayList<>(com.d4rk.stickers.StickerPackValidator.EMOJI_MAX_LIMIT);
             while (reader.hasNext()) {
                 final String key = reader.nextName();
                 if ("image_file".equals(key)) {
@@ -149,6 +153,7 @@ class ContentFileParser {
                         }
                     }
                     reader.endArray();
+
                 } else {
                     throw new IllegalStateException("unknown field in json: " + key);
                 }

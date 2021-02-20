@@ -32,6 +32,7 @@ public class StickerContentProvider extends ContentProvider {
     public static final String LICENSE_AGREENMENT_WEBSITE = "sticker_pack_license_agreement_website";
     public static final String IMAGE_DATA_VERSION = "image_data_version";
     public static final String AVOID_CACHE = "whatsapp_will_not_cache_stickers";
+    public static final String ANIMATED_STICKER_PACK = "animated_sticker_pack";
     public static final String STICKER_FILE_NAME_IN_QUERY = "sticker_file_name";
     public static final String STICKER_FILE_EMOJI_IN_QUERY = "sticker_emoji";
     private static final String CONTENT_FILE_NAME = "contents.json";
@@ -63,7 +64,6 @@ public class StickerContentProvider extends ContentProvider {
         }
         return true;
     }
-    @NonNull
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
@@ -87,7 +87,6 @@ public class StickerContentProvider extends ContentProvider {
         }
         return null;
     }
-    @NonNull
     @Override
     public String getType(@NonNull Uri uri) {
         final int matchCode = MATCHER.match(uri);
@@ -109,7 +108,7 @@ public class StickerContentProvider extends ContentProvider {
     private synchronized void readContentFile(@NonNull Context context) {
         try (InputStream contentsInputStream = context.getAssets().open(CONTENT_FILE_NAME)) {
             stickerPackList = ContentFileParser.parseStickerPacks(contentsInputStream);
-        } catch (@NonNull IOException | IllegalStateException e) {
+        } catch (IOException | IllegalStateException e) {
             throw new RuntimeException(CONTENT_FILE_NAME + " file has some issues: " + e.getMessage(), e);
         }
     }
@@ -119,11 +118,9 @@ public class StickerContentProvider extends ContentProvider {
         }
         return stickerPackList;
     }
-    @NonNull
     private Cursor getPackForAllStickerPacks(@NonNull Uri uri) {
         return getStickerPackInfo(uri, getStickerPackList());
     }
-    @NonNull
     private Cursor getCursorForSingleStickerPack(@NonNull Uri uri) {
         final String identifier = uri.getLastPathSegment();
         for (StickerPack stickerPack : getStickerPackList()) {
@@ -149,6 +146,7 @@ public class StickerContentProvider extends ContentProvider {
                         LICENSE_AGREENMENT_WEBSITE,
                         IMAGE_DATA_VERSION,
                         AVOID_CACHE,
+                        ANIMATED_STICKER_PACK,
                 });
         for (StickerPack stickerPack : stickerPackList) {
             MatrixCursor.RowBuilder builder = cursor.newRow();
@@ -164,6 +162,7 @@ public class StickerContentProvider extends ContentProvider {
             builder.add(stickerPack.licenseAgreementWebsite);
             builder.add(stickerPack.imageDataVersion);
             builder.add(stickerPack.avoidCache ? 1 : 0);
+            builder.add(stickerPack.animatedStickerPack ? 1 : 0);
         }
         cursor.setNotificationUri(Objects.requireNonNull(getContext()).getContentResolver(), uri);
         return cursor;
@@ -182,8 +181,7 @@ public class StickerContentProvider extends ContentProvider {
         cursor.setNotificationUri(Objects.requireNonNull(getContext()).getContentResolver(), uri);
         return cursor;
     }
-    @Nullable
-    private AssetFileDescriptor getImageAsset(@NonNull Uri uri) throws IllegalArgumentException {
+    private AssetFileDescriptor getImageAsset(Uri uri) throws IllegalArgumentException {
         AssetManager am = Objects.requireNonNull(getContext()).getAssets();
         final List<String> pathSegments = uri.getPathSegments();
         if (pathSegments.size() != 3) {
@@ -212,7 +210,6 @@ public class StickerContentProvider extends ContentProvider {
         }
         return null;
     }
-    @Nullable
     private AssetFileDescriptor fetchFile(@NonNull Uri uri, @NonNull AssetManager am, @NonNull String fileName, @NonNull String identifier) {
         try {
             return am.openFd(identifier + "/" + fileName);
@@ -225,7 +222,6 @@ public class StickerContentProvider extends ContentProvider {
     public int delete(@NonNull Uri uri, @Nullable String selection, String[] selectionArgs) {
         throw new UnsupportedOperationException("Not supported");
     }
-    @NonNull
     @Override
     public Uri insert(@NonNull Uri uri, ContentValues values) {
         throw new UnsupportedOperationException("Not supported");

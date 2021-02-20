@@ -3,8 +3,8 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import androidx.annotation.NonNull;
 import android.text.TextUtils;
+import androidx.annotation.NonNull;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import static com.d4rk.stickers.StickerContentProvider.ANDROID_APP_DOWNLOAD_LINK_IN_QUERY;
+import static com.d4rk.stickers.StickerContentProvider.ANIMATED_STICKER_PACK;
 import static com.d4rk.stickers.StickerContentProvider.AVOID_CACHE;
+import static com.d4rk.stickers.StickerContentProvider.IMAGE_DATA_VERSION;
 import static com.d4rk.stickers.StickerContentProvider.IOS_APP_DOWNLOAD_LINK_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.LICENSE_AGREENMENT_WEBSITE;
 import static com.d4rk.stickers.StickerContentProvider.PRIVACY_POLICY_WEBSITE;
@@ -25,11 +27,10 @@ import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_ICON_IN_QUER
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_IDENTIFIER_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_NAME_IN_QUERY;
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_PUBLISHER_IN_QUERY;
-import static com.d4rk.stickers.StickerContentProvider.IMAGE_DATA_VERSION;
 class StickerPackLoader {
     @NonNull
     static ArrayList<StickerPack> fetchStickerPacks(Context context) throws IllegalStateException {
-        final Cursor cursor = context.getContentResolver().query(StickerContentProvider.AUTHORITY_URI, null, null, null, null);
+        final Cursor cursor = context.getContentResolver().query(com.d4rk.stickers.StickerContentProvider.AUTHORITY_URI, null, null, null, null);
         if (cursor == null) {
             throw new IllegalStateException("could not fetch from content provider, " + BuildConfig.CONTENT_PROVIDER_AUTHORITY);
         }
@@ -48,7 +49,7 @@ class StickerPackLoader {
         for (StickerPack stickerPack : stickerPackList) {
             final List<Sticker> stickers = getStickersForPack(context, stickerPack);
             stickerPack.setStickers(stickers);
-            StickerPackValidator.verifyStickerPackValidity(context, stickerPack);
+            com.d4rk.stickers.StickerPackValidator.verifyStickerPackValidity(context, stickerPack);
         }
         return stickerPackList;
     }
@@ -86,7 +87,8 @@ class StickerPackLoader {
             final String licenseAgreementWebsite = cursor.getString(cursor.getColumnIndexOrThrow(LICENSE_AGREENMENT_WEBSITE));
             final String imageDataVersion = cursor.getString(cursor.getColumnIndexOrThrow(IMAGE_DATA_VERSION));
             final boolean avoidCache = cursor.getShort(cursor.getColumnIndexOrThrow(AVOID_CACHE)) > 0;
-            final StickerPack stickerPack = new StickerPack(identifier, name, publisher, trayImage, publisherEmail, publisherWebsite, privacyPolicyWebsite, licenseAgreementWebsite, imageDataVersion, avoidCache);
+            final boolean animatedStickerPack = cursor.getShort(cursor.getColumnIndexOrThrow(ANIMATED_STICKER_PACK)) > 0;
+            final StickerPack stickerPack = new StickerPack(identifier, name, publisher, trayImage, publisherEmail, publisherWebsite, privacyPolicyWebsite, licenseAgreementWebsite, imageDataVersion, avoidCache, animatedStickerPack);
             stickerPack.setAndroidPlayStoreLink(androidPlayStoreLink);
             stickerPack.setIosAppStoreLink(iosAppLink);
             stickerPackList.add(stickerPack);
@@ -104,7 +106,7 @@ class StickerPackLoader {
             do {
                 final String name = cursor.getString(cursor.getColumnIndexOrThrow(STICKER_FILE_NAME_IN_QUERY));
                 final String emojisConcatenated = cursor.getString(cursor.getColumnIndexOrThrow(STICKER_FILE_EMOJI_IN_QUERY));
-                List<String> emojis = new ArrayList<>(StickerPackValidator.EMOJI_MAX_LIMIT);
+                List<String> emojis = new ArrayList<>(com.d4rk.stickers.StickerPackValidator.EMOJI_MAX_LIMIT);
                 if (!TextUtils.isEmpty(emojisConcatenated)) {
                     emojis = Arrays.asList(emojisConcatenated.split(","));
                 }
@@ -132,7 +134,7 @@ class StickerPackLoader {
         }
     }
     private static Uri getStickerListUri(String identifier) {
-        return new Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT).authority(BuildConfig.CONTENT_PROVIDER_AUTHORITY).appendPath(StickerContentProvider.STICKERS).appendPath(identifier).build();
+        return new Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT).authority(BuildConfig.CONTENT_PROVIDER_AUTHORITY).appendPath(com.d4rk.stickers.StickerContentProvider.STICKERS).appendPath(identifier).build();
     }
     static Uri getStickerAssetUri(String identifier, String stickerName) {
         return new Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT).authority(BuildConfig.CONTENT_PROVIDER_AUTHORITY).appendPath(StickerContentProvider.STICKERS_ASSET).appendPath(identifier).appendPath(stickerName).build();

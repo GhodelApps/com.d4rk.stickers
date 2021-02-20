@@ -1,3 +1,4 @@
+
 package com.d4rk.stickers;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,12 +14,13 @@ class StickerPack implements Parcelable {
     final String licenseAgreementWebsite;
     final String imageDataVersion;
     final boolean avoidCache;
+    final boolean animatedStickerPack;
     String iosAppStoreLink;
     private List<Sticker> stickers;
     private long totalSize;
     String androidPlayStoreLink;
     private boolean isWhitelisted;
-    StickerPack(String identifier, String name, String publisher, String trayImageFile, String publisherEmail, String publisherWebsite, String privacyPolicyWebsite, String licenseAgreementWebsite, String imageDataVersion, boolean avoidCache) {
+    StickerPack(String identifier, String name, String publisher, String trayImageFile, String publisherEmail, String publisherWebsite, String privacyPolicyWebsite, String licenseAgreementWebsite, String imageDataVersion, boolean avoidCache, boolean animatedStickerPack) {
         this.identifier = identifier;
         this.name = name;
         this.publisher = publisher;
@@ -29,6 +31,7 @@ class StickerPack implements Parcelable {
         this.licenseAgreementWebsite = licenseAgreementWebsite;
         this.imageDataVersion = imageDataVersion;
         this.avoidCache = avoidCache;
+        this.animatedStickerPack = animatedStickerPack;
     }
     void setIsWhitelisted(boolean isWhitelisted) {
         this.isWhitelisted = isWhitelisted;
@@ -52,6 +55,7 @@ class StickerPack implements Parcelable {
         isWhitelisted = in.readByte() != 0;
         imageDataVersion = in.readString();
         avoidCache = in.readByte() != 0;
+        animatedStickerPack = in.readByte() != 0;
     }
     public static final Creator<StickerPack> CREATOR = new Creator<StickerPack>() {
         @Override
@@ -103,5 +107,6 @@ class StickerPack implements Parcelable {
         dest.writeByte((byte) (isWhitelisted ? 1 : 0));
         dest.writeString(imageDataVersion);
         dest.writeByte((byte) (avoidCache ? 1 : 0));
+        dest.writeByte((byte) (animatedStickerPack ? 1 : 0));
     }
 }

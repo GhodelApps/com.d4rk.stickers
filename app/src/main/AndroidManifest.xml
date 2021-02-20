@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.d4rk.stickers"
     xmlns:dist="http://schemas.android.com/apk/distribution">
-    <dist:module dist:instant="true" />
+    <dist:module dist:instant="true"/>
     <application
         android:name="com.d4rk.stickers.StickerApplication"
         android:allowBackup="false"
@@ -16,27 +17,25 @@
         tools:ignore="HardcodedDebugMode">
         <activity android:name="com.d4rk.stickers.EntryActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.d4rk.stickers.StickerPackListActivity" />
+        <activity android:name="com.d4rk.stickers.StickerPackListActivity"/>
         <activity
             android:name="com.d4rk.stickers.StickerPackDetailsActivity"
-            android:parentActivityName="com.d4rk.stickers.StickerPackListActivity"
-            tools:ignore="UnusedAttribute">
+            android:parentActivityName="com.d4rk.stickers.StickerPackListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.d4rk.stickers.StickerPackListActivity" />
+                android:value="com.d4rk.stickers.StickerPackListActivity"/>
         </activity>
         <activity
             android:name="com.d4rk.stickers.StickerPackInfoActivity"
             android:label="@string/title_activity_sticker_pack_info"
-            android:parentActivityName="com.d4rk.stickers.StickerPackDetailsActivity"
-            tools:ignore="UnusedAttribute">
+            android:parentActivityName="com.d4rk.stickers.StickerPackDetailsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.d4rk.stickers.StickerPackDetailsActivity" />
+                android:value="com.d4rk.stickers.StickerPackDetailsActivity"/>
         </activity>
         <provider
             android:name="com.d4rk.stickers.StickerContentProvider"
@@ -46,4 +45,8 @@
             android:readPermission="com.whatsapp.sticker.READ"
             android:writePermission="com.whatsapp.sticker.WRITE"/>
     </application>
+    <queries>
+        <package android:name="com.whatsapp"/>
+        <package android:name="com.whatsapp.w4b"/>
+    </queries>
 </manifest>

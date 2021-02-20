@@ -1,7 +1,6 @@
 package com.d4rk.stickers;
 import android.app.Dialog;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +14,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     public static final class MessageDialogFragment extends DialogFragment {
         private static final String ARG_TITLE_ID = "title_id";
         private static final String ARG_MESSAGE = "message";
-        @NonNull
         static DialogFragment newInstance(String message) {
             DialogFragment fragment = new MessageDialogFragment();
             Bundle arguments = new Bundle();
@@ -24,7 +22,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             fragment.setArguments(arguments);
             return fragment;
         }
-        @NonNull
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             assert getArguments() != null;

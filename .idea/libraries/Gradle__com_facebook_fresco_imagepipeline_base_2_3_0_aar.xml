@@ -1,12 +1,16 @@
 <component name="libraryTable">
   <library name="Gradle: com.facebook.fresco:imagepipeline-base:2.3.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/efd5fa7ad09f251d5cab34b3d460997f/transformed/jetified-imagepipeline-base-2.3.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2d069fceb758a568d168daf49d658b87/transformed/jetified-imagepipeline-base-2.3.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/efd5fa7ad09f251d5cab34b3d460997f/transformed/jetified-imagepipeline-base-2.3.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/efd5fa7ad09f251d5cab34b3d460997f/transformed/jetified-imagepipeline-base-2.3.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/efd5fa7ad09f251d5cab34b3d460997f/transformed/jetified-imagepipeline-base-2.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/246bbbef68a355549a87568d2fbe10bc/transformed/jetified-imagepipeline-base-2.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4301759accff6dfc0dce49438492869d/transformed/jetified-imagepipeline-base-2.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/13fff94097f8f2d665d7c723cc480ed8/transformed/jetified-imagepipeline-base-2.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2d069fceb758a568d168daf49d658b87/transformed/jetified-imagepipeline-base-2.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2d069fceb758a568d168daf49d658b87/transformed/jetified-imagepipeline-base-2.3.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2d069fceb758a568d168daf49d658b87/transformed/jetified-imagepipeline-base-2.3.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.fresco/imagepipeline-base/2.3.0/f2e178480030d68afe69f9fb9f0c320be43ec81f/imagepipeline-base-2.3.0-javadoc.jar!/" />

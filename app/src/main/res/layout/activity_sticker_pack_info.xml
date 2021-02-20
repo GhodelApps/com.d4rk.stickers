@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="6dp"
@@ -43,11 +44,5 @@
             style="@style/InfoButtonStyle"
             android:text="@string/privacy_policy"
             app:drawableStartCompat="@drawable/sticker_3rdparty_privacy"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/changelog"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"/>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

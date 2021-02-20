@@ -57,13 +57,10 @@ public class EntryActivity extends BaseActivity {
         }
     }
     static class LoadListAsyncTask extends AsyncTask<Void, Void, Pair<String, ArrayList<StickerPack>>> {
-        @NonNull
         private final WeakReference<EntryActivity> contextWeakReference;
-
         LoadListAsyncTask(EntryActivity activity) {
             this.contextWeakReference = new WeakReference<>(activity);
         }
-        @Nullable
         @Override
         protected Pair<String, ArrayList<StickerPack>> doInBackground(Void... voids) {
             ArrayList<StickerPack> stickerPackList;

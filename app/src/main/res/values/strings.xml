@@ -20,65 +20,7 @@
     <string name="add_pack_fail_prompt_update_whatsapp" translatable="false">Sticker pack not added. If you\'d like to add it, make sure you update to the latest version of WhatsApp.</string>
     <string name="add_pack_fail_prompt_update_play_link" translatable="false">Update</string>
     <string name="cannot_find_play_store" translatable="false">Google Play is not installed on the device.</string>
-    <string name="changelog" translatable="false">D4rK Stickers - Changelog:\n
-<br> </br>
-        \n
-<br> </br>
-        <b>Version 3.0 (beta):\n</b>
-        <br> </br>
-        -Added splash screen;\n
-        <br> </br>
-        -Android 6.0 M (API 23) is minimum SDK now;\n
-        <br> </br>
-        -Performance &amp; other optimizations;\n
-        <br> </br>
-        -New adaptive Dark Mode;\n
-        <br> </br>
-        -New icons;\n
-        <br> </br>
-        -Fixed "Sticker pack not added..." on android R;\n
-        <br> </br>
-        -New UI;\n
-        <br> </br>
-        -New stickers;\n
-        <br> </br>
-        -Removed all unused flags;\n
-        <br> </br>
-        -Removed unused strings;\n
-        <br> </br>
-        -Added ldpi support;\n
-        <br> </br>
-        -New sticker packs;\n
-        <br> </br>
-        -Updated all scripts;\n
-        <br> </br>
-        -Bug fixes.
-<br> </br>
-        \n
-<br> </br>
-        \n
-        <b>Version 2.0:\n</b>
-        <br> </br>
-        -Changelog added;\n
-        <br> </br>
-        -Compatibility with Android R;\n
-        <br> </br>
-        -Gradle scripts updated;\n
-        <br> </br>
-        -Crash fixed;\n
-        <br> </br>
-        -Android 7.1.1 N (API 25) is minimum SDK now;\n
-        <br> </br>
-        -Fixed layout;\n
-        <br>
-        -New stickers.\n
-        </br>
-<br> </br>
-        \n
-<br> </br>
-        <b>Version 1.0:\n</b>
-        <br> </br>
-        -Initial release.\n
-        <br> </br>
-    </string>
+    <string name="sticker_pack_animation_indicator">Animated sticker pack</string>
+    <!-- text we display at the end of sticker pack details page showing that users can tap sticker to see bigger version -->
+    <string name="sticker_pack_details_tap_to_preview" >Tap to preview sticker</string>
 </resources>

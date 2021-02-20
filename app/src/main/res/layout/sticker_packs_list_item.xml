@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="6dp"
@@ -49,21 +50,29 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:textSize="16sp"
-                tools:text="Pusheen" />
+                tools:text="Pusheen"/>
+            <ImageView
+                android:id="@+id/sticker_pack_animation_indicator"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/animated_pack_indicator"
+                app:tint="@color/animatedStickerIndicator"
+                android:layout_marginStart="4dp"
+                android:contentDescription="@string/sticker_pack_animation_indicator"/>
             <TextView
                 android:id="@+id/sticker_pack_publisher"
                 style="@style/sticker_packs_list_item_author_style"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:visibility="gone"
-                tools:text="petellison"/>
+                android:layout_marginStart="4dp"
+                android:ellipsize="end"
+                android:maxWidth="120dp"
+                tools:text="petellison" />
             <TextView
                 android:id="@+id/sticker_pack_list_item_dot"
                 style="@style/sticker_packs_list_item_author_style"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:visibility="gone"
                 android:paddingStart="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
                 android:paddingLeft="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
                 android:paddingEnd="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
@@ -74,7 +83,6 @@
                 style="@style/sticker_packs_list_item_author_style"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:visibility="gone"
                 tools:text="700kb"/>
         </LinearLayout>
         <LinearLayout

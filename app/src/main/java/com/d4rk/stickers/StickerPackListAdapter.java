@@ -1,7 +1,7 @@
 package com.d4rk.stickers;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.text.format.Formatter;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -10,11 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
-public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackListItemViewHolder> {
+public class StickerPackListAdapter extends RecyclerView.Adapter<com.d4rk.stickers.StickerPackListItemViewHolder> {
     @NonNull
     private List<StickerPack> stickerPacks;
     @NonNull
@@ -27,13 +26,12 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
     }
     @NonNull
     @Override
-    public StickerPackListItemViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
+    public com.d4rk.stickers.StickerPackListItemViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
         final Context context = viewGroup.getContext();
         final LayoutInflater layoutInflater = LayoutInflater.from(context);
         final View stickerPackRow = layoutInflater.inflate(R.layout.sticker_packs_list_item, viewGroup, false);
         return new StickerPackListItemViewHolder(stickerPackRow);
     }
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onBindViewHolder(@NonNull final StickerPackListItemViewHolder viewHolder, final int index) {
         StickerPack pack = stickerPacks.get(index);
@@ -54,16 +52,16 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
             rowImage.setImageURI(StickerPackLoader.getStickerAssetUri(pack.identifier, pack.getStickers().get(i).imageFileName));
             final LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) rowImage.getLayoutParams();
             final int marginBetweenImages = minMarginBetweenImages - lp.leftMargin - lp.rightMargin;
-            if (i != actualNumberOfStickersToShow - 1 && marginBetweenImages > 0) { //do not set the margin for the last image
+            if (i != actualNumberOfStickersToShow - 1 && marginBetweenImages > 0) {
                 lp.setMargins(lp.leftMargin, lp.topMargin, lp.rightMargin + marginBetweenImages, lp.bottomMargin);
                 rowImage.setLayoutParams(lp);
             }
             viewHolder.imageRowView.addView(rowImage);
         }
         setAddButtonAppearance(viewHolder.addButton, pack);
+        viewHolder.animatedStickerPackIndicator.setVisibility(pack.animatedStickerPack ? View.VISIBLE : View.GONE);
     }
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    private void setAddButtonAppearance(@NonNull ImageView addButton, @NonNull StickerPack pack) {
+    private void setAddButtonAppearance(ImageView addButton, StickerPack pack) {
         if (pack.getIsWhitelisted()) {
             addButton.setImageResource(R.drawable.sticker_3rdparty_added);
             addButton.setClickable(false);
@@ -77,14 +75,14 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
             addButton.setBackgroundResource(outValue.resourceId);
         }
     }
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    private void setBackground(@NonNull View view) {
+    private void setBackground(View view) {
         view.setBackground(null);
     }
     @Override
     public int getItemCount() {
         return stickerPacks.size();
     }
+    @SuppressLint("NotifyDataSetChanged")
     void setImageRowSpec(int maxNumberOfStickersInARow, int minMarginBetweenImages) {
         this.minMarginBetweenImages = minMarginBetweenImages;
         if (this.maxNumberOfStickersInARow != maxNumberOfStickersInARow) {
@@ -92,7 +90,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
             notifyDataSetChanged();
         }
     }
-    void setStickerPackList(@NonNull List<StickerPack> stickerPackList) {
+    void setStickerPackList(List<StickerPack> stickerPackList) {
         this.stickerPacks = stickerPackList;
     }
     public interface OnAddButtonClickedListener {
