@@ -17,6 +17,9 @@ android {
         buildConfigField("String",
                 "CONTENT_PROVIDER_AUTHORITY",
                 "\"${contentProviderAuthority}\"")
+        testFunctionalTest false
+        testHandleProfiling false
+        multiDexEnabled true
     }
     buildTypes {
         debug {
@@ -28,6 +31,8 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexEnabled true
+            debuggable false
         }
     }
     compileOptions {
@@ -42,6 +47,7 @@ android {
     ndkVersion '23.0.7123448 rc1'
     dependenciesInfo {
         includeInApk false
+        includeInBundle false
     }
 }
 task checkDebug {
