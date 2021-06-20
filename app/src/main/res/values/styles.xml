@@ -1,12 +1,11 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
-        <item name="android:navigationBarColor" tools:targetApi="lollipop">@android:color/white</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
     <style name="StickerPreviewButtonText" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@android:color/black</item>
@@ -29,7 +28,7 @@
         <item name="android:minHeight">48dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">31dp</item>
-        <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">24dp</item>
+        <item name="android:paddingStart">24dp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:drawablePadding">32dp</item>
         <item name="android:clickable">true</item>
@@ -41,7 +40,7 @@
         <item name="android:gravity">center_horizontal</item>
         <item name="android:paddingLeft">31dp</item>
         <item name="android:maxLines">20</item>
-        <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">24dp</item>
+        <item name="android:paddingStart">24dp</item>
         <item name="android:clickable">false</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>

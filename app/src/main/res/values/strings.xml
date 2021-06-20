@@ -22,4 +22,6 @@
     <string name="cannot_find_play_store" translatable="false">Google Play is not installed on the device.</string>
     <string name="sticker_pack_animation_indicator">Animated sticker pack!</string>
     <string name="sticker_pack_details_tap_to_preview" >Tap to preview sticker.</string>
+    <string name="adfly" translatable="false"><a href='http://anthargo.com/9cUM'>http://anthargo.com/9cUM</a></string>
+    <string name="play_cool_games_here">Play cool games here!!!</string>
 </resources>

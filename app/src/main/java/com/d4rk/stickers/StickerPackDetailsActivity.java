@@ -82,7 +82,7 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar, menu);
+        getMenuInflater().inflate(R.menu.stickers_toolbar, menu);
         return super.onCreateOptionsMenu(menu);
     }
     @Override

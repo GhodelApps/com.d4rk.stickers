@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">@android:color/transparent</color>
+    <color name="colorDarkShortcuts">#2D2D2D</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorDarkMode">#121212</color>
     <color name="colorAccent">#4285F4</color>

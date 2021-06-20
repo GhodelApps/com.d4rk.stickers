@@ -1,7 +1,11 @@
 package com.d4rk.stickers;
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,6 +39,20 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         super.onResume();
         whiteListCheckAsyncTask = new WhiteListCheckAsyncTask(this);
         whiteListCheckAsyncTask.execute(stickerPackList.toArray(new StickerPack[0]));
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.link) {
+            Intent openURL = new Intent(Intent.ACTION_VIEW);
+            openURL.setData(Uri.parse("https://www.atmegame.com/?utm_source=D4Cleaner&utm_medium=D4Cleaner"));
+            startActivity(openURL);
+        }
+        return super.onOptionsItemSelected(item);
     }
     @Override
     protected void onPause() {
