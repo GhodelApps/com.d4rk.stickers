@@ -1,5 +1,9 @@
 # D4rK Stickers
 
+- ╔╦╦╦═╦╗╔═╦═╦══╦═╗
+- ║║║║╩╣╚╣═╣║║║║║╩╣
+- ╚══╩═╩═╩═╩═╩╩╩╩═╝
+
 ![Works with Android](https://img.shields.io/badge/Works_with-Android-green?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/whatsapp/stickers?style=flat-square) 
 
@@ -39,10 +43,12 @@ Bugs can be reported here.
 
 - Create an Android/general issue/bug.
 
+- Known bugs: You tell me XD
+
 __D4rK Stickers is 100% free, open source, ad free, and fun for everyone.__
 
 ## License
 
 WhatsApp Stickers is BSD licensed, as found in the [`LICENSE`](https://github.com/WhatsApp/stickers/blob/master/LICENSE) file.
 
-![logo](https://github.com/D4rK7355608/com.d4rk.stickers/blob/master/app/src/main/res/drawable-xxxhdpi/ic_splash_screen_d4rk.png)
+![license](https://imgur.com/QQlcEVT.png) 

@@ -34,14 +34,4 @@
         <item name="android:clickable">true</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
-    <style name="ChangelogButtonStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:paddingLeft">31dp</item>
-        <item name="android:maxLines">20</item>
-        <item name="android:paddingStart">24dp</item>
-        <item name="android:clickable">false</item>
-        <item name="android:foreground">?android:attr/selectableItemBackground</item>
-    </style>
 </resources>

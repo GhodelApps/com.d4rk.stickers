@@ -1,6 +1,9 @@
 package com.d4rk.stickers;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,16 +12,29 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.pm.ShortcutInfoCompat;
+import androidx.core.content.pm.ShortcutManagerCompat;
+import androidx.core.graphics.drawable.IconCompat;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 public class EntryActivity extends BaseActivity {
     private View progressBar;
     private LoadListAsyncTask loadListAsyncTask;
+    final Context context = this;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
         overridePendingTransition(0, 0);
+        @SuppressLint("RestrictedApi")
+        ShortcutInfoCompat shortcut = new ShortcutInfoCompat.Builder(context, "atm_shortcut")
+                .setShortLabel(getString(R.string.atmegame))
+                .setLongLabel(getString(R.string.play_cool_games_here))
+                .setIcon(IconCompat.createFromIcon(Icon.createWithResource(context, R.mipmap.ic_launch_atmegame)))
+                .setIntent(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.atmegame.com/?utm_source=D4Cleaner&utm_medium=D4Cleaner")))
+                .build();
+        ShortcutManagerCompat.pushDynamicShortcut(context, shortcut);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }

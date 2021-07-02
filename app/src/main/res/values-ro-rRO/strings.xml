@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">D4rK Stickers</string>
+    <string name="title_validation_error">Eroare la pachet</string>
+    <string name="tray_image_content_description">Imaginea Sticker Pack-ului</string>
+    <string name="more_info_button">Mai multe informații despre acest pachet.</string>
+    <string name="add_to_whatsapp">Adaugă în WhatsApp!!</string>
+    <string name="add_button_content_description">Adaugă sticker-ul în WhatsApp</string>
+    <string name="title_activity_sticker_pack_details_multiple_pack">Detaliile pachetului:</string>
+    <string name="view_webpage">Vezi canalul de YouTube.</string>
+    <string name="send_email">Trimite email.</string>
+    <string name="privacy_policy">Politica de confidențialitate.</string>
+    <string name="license_agreement">Acord de licențiere.</string>
+    <string name="info_screen_tray_icon">Iconița</string>
+    <string name="details_pack_already_added">Pachetul a fost adaugat în WhatsApp!</string>
+    <string name="info_send_email_to_prompt">Trimite email cu...</string>
+    <string name="add_pack_fail_prompt_update_whatsapp">Pachetul nu poate sa fie adaugat. Asigură-te că ai cea mai recenta versiune de WhatsApp.</string>
+    <string name="add_pack_fail_prompt_update_play_link">Acctualizează.</string>
+</resources>

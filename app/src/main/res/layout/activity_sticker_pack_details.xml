@@ -49,7 +49,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/pack_name"
             app:layout_constraintStart_toEndOf="@+id/pack_name"
             app:layout_constraintTop_toTopOf="@+id/pack_name"
-            app:tint="@color/animatedStickerIndicator"/>
+            app:tint="@color/animatedStickerIndicator"
+            tools:ignore="ImageContrastCheck"/>
         <TextView
             android:id="@+id/author"
             android:layout_width="wrap_content"
