@@ -15,7 +15,7 @@ class StickerPack implements Parcelable {
     final boolean avoidCache;
     final boolean animatedStickerPack;
     String iosAppStoreLink;
-    private List<Sticker> stickers;
+    private List < Sticker > stickers;
     private long totalSize;
     String androidPlayStoreLink;
     private boolean isWhitelisted;
@@ -38,38 +38,38 @@ class StickerPack implements Parcelable {
     boolean getIsWhitelisted() {
         return isWhitelisted;
     }
-    private StickerPack(Parcel in) {
-        identifier = in.readString();
-        name = in.readString();
-        publisher = in.readString();
-        trayImageFile = in.readString();
-        publisherEmail = in.readString();
-        publisherWebsite = in.readString();
-        privacyPolicyWebsite = in.readString();
-        licenseAgreementWebsite = in.readString();
-        iosAppStoreLink = in.readString();
-        stickers = in.createTypedArrayList(Sticker.CREATOR);
-        totalSize = in.readLong();
-        androidPlayStoreLink = in.readString();
-        isWhitelisted = in.readByte() != 0;
-        imageDataVersion = in.readString();
-        avoidCache = in.readByte() != 0;
-        animatedStickerPack = in.readByte() != 0;
+    private StickerPack(Parcel in ) {
+        identifier = in .readString();
+        name = in .readString();
+        publisher = in .readString();
+        trayImageFile = in .readString();
+        publisherEmail = in .readString();
+        publisherWebsite = in .readString();
+        privacyPolicyWebsite = in .readString();
+        licenseAgreementWebsite = in .readString();
+        iosAppStoreLink = in .readString();
+        stickers = in .createTypedArrayList(Sticker.CREATOR);
+        totalSize = in .readLong();
+        androidPlayStoreLink = in .readString();
+        isWhitelisted = in .readByte() != 0;
+        imageDataVersion = in .readString();
+        avoidCache = in .readByte() != 0;
+        animatedStickerPack = in .readByte() != 0;
     }
-    public static final Creator<StickerPack> CREATOR = new Creator<StickerPack>() {
+    public static final Creator < StickerPack > CREATOR = new Creator < StickerPack > () {
         @Override
-        public StickerPack createFromParcel(Parcel in) {
-            return new StickerPack(in);
+        public StickerPack createFromParcel(Parcel in ) {
+            return new StickerPack( in );
         }
         @Override
         public StickerPack[] newArray(int size) {
             return new StickerPack[size];
         }
     };
-    void setStickers(List<Sticker> stickers) {
+    void setStickers(List < Sticker > stickers) {
         this.stickers = stickers;
         totalSize = 0;
-        for (Sticker sticker : stickers) {
+        for (Sticker sticker: stickers) {
             totalSize += sticker.size;
         }
     }
@@ -79,7 +79,7 @@ class StickerPack implements Parcelable {
     void setIosAppStoreLink(String iosAppStoreLink) {
         this.iosAppStoreLink = iosAppStoreLink;
     }
-    List<Sticker> getStickers() {
+    List < Sticker > getStickers() {
         return stickers;
     }
     long getTotalSize() {
@@ -103,9 +103,9 @@ class StickerPack implements Parcelable {
         dest.writeTypedList(stickers);
         dest.writeLong(totalSize);
         dest.writeString(androidPlayStoreLink);
-        dest.writeByte((byte) (isWhitelisted ? 1 : 0));
+        dest.writeByte((byte)(isWhitelisted ? 1 : 0));
         dest.writeString(imageDataVersion);
-        dest.writeByte((byte) (avoidCache ? 1 : 0));
-        dest.writeByte((byte) (animatedStickerPack ? 1 : 0));
+        dest.writeByte((byte)(avoidCache ? 1 : 0));
+        dest.writeByte((byte)(animatedStickerPack ? 1 : 0));
     }
 }

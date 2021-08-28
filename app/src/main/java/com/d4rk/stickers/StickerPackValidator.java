@@ -93,11 +93,11 @@ abstract class StickerPackValidator {
         } catch (IOException e) {
             throw new IllegalStateException("Cannot open tray image, " + stickerPack.trayImageFile, e);
         }
-        final List<Sticker> stickers = stickerPack.getStickers();
+        final List < Sticker > stickers = stickerPack.getStickers();
         if (stickers.size() < STICKER_SIZE_MIN || stickers.size() > STICKER_SIZE_MAX) {
             throw new IllegalStateException("sticker pack sticker count should be between 3 to 30 inclusive, it currently has " + stickers.size() + ", sticker pack identifier: " + stickerPack.identifier);
         }
-        for (final Sticker sticker : stickers) {
+        for (final Sticker sticker: stickers) {
             validateSticker(context, stickerPack.identifier, sticker, stickerPack.animatedStickerPack);
         }
     }
@@ -149,7 +149,7 @@ abstract class StickerPackValidator {
         }
     }
     private static void checkFrameDurationsForAnimatedSticker(@NonNull final int[] frameDurations, @NonNull final String identifier, @NonNull final String fileName) {
-        for (int frameDuration : frameDurations) {
+        for (int frameDuration: frameDurations) {
             if (frameDuration < ANIMATED_STICKER_FRAME_DURATION_MIN) {
                 throw new IllegalStateException("animated sticker frame duration limit is " + ANIMATED_STICKER_FRAME_DURATION_MIN + ", sticker pack identifier: " + identifier + ", filename: " + fileName);
             }

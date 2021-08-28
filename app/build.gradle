@@ -66,9 +66,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
-    def fresco_version = '2.5.0'
-    implementation "com.facebook.fresco:fresco:$fresco_version"
-    implementation "com.facebook.fresco:webpsupport:$fresco_version"
-    implementation "com.facebook.fresco:animated-webp:$fresco_version"
-    implementation "com.facebook.fresco:animated-base:${fresco_version}"
+    implementation "com.facebook.fresco:fresco:2.5.0"
+    implementation "com.facebook.fresco:webpsupport:2.5.0"
+    implementation "com.facebook.fresco:animated-webp:2.5.0"
+    implementation "com.facebook.fresco:animated-base:2.5.0"
 }

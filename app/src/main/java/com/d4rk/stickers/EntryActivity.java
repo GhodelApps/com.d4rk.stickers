@@ -42,7 +42,7 @@ public class EntryActivity extends BaseActivity {
         loadListAsyncTask = new LoadListAsyncTask(this);
         loadListAsyncTask.execute();
     }
-    private void showStickerPack(@NonNull ArrayList<StickerPack> stickerPackList) {
+    private void showStickerPack(@NonNull ArrayList < StickerPack > stickerPackList) {
         progressBar.setVisibility(View.GONE);
         if (stickerPackList.size() > 1) {
             final Intent intent = new Intent(this, StickerPackListActivity.class);
@@ -72,35 +72,36 @@ public class EntryActivity extends BaseActivity {
             loadListAsyncTask.cancel(true);
         }
     }
-    static class LoadListAsyncTask extends AsyncTask<Void, Void, Pair<String, ArrayList<StickerPack>>> {
-        private final WeakReference<EntryActivity> contextWeakReference;
+    static class LoadListAsyncTask extends AsyncTask < Void, Void, Pair < String, ArrayList < StickerPack >>> {
+        private final WeakReference < EntryActivity > contextWeakReference;
         LoadListAsyncTask(EntryActivity activity) {
-            this.contextWeakReference = new WeakReference<>(activity);
+            this.contextWeakReference = new WeakReference < > (activity);
         }
         @Override
-        protected Pair<String, ArrayList<StickerPack>> doInBackground(Void... voids) {
-            ArrayList<StickerPack> stickerPackList;
+        protected Pair < String,
+                ArrayList < StickerPack >> doInBackground(Void...voids) {
+            ArrayList < StickerPack > stickerPackList;
             try {
                 final Context context = contextWeakReference.get();
                 if (context != null) {
                     stickerPackList = StickerPackLoader.fetchStickerPacks(context);
                     if (stickerPackList.size() == 0) {
-                        return new Pair<>("could not find any packs", null);
+                        return new Pair < > ("could not find any packs", null);
                     }
-                    for (StickerPack stickerPack : stickerPackList) {
+                    for (StickerPack stickerPack: stickerPackList) {
                         StickerPackValidator.verifyStickerPackValidity(context, stickerPack);
                     }
-                    return new Pair<>(null, stickerPackList);
+                    return new Pair < > (null, stickerPackList);
                 } else {
-                    return new Pair<>("could not fetch sticker packs", null);
+                    return new Pair < > ("could not fetch sticker packs", null);
                 }
             } catch (Exception e) {
                 Log.e("EntryActivity", "error fetching sticker packs", e);
-                return new Pair<>(e.getMessage(), null);
+                return new Pair < > (e.getMessage(), null);
             }
         }
         @Override
-        protected void onPostExecute(@NonNull Pair<String, ArrayList<StickerPack>> stringListPair) {
+        protected void onPostExecute(@NonNull Pair < String, ArrayList < StickerPack >> stringListPair) {
 
             final EntryActivity entryActivity = contextWeakReference.get();
             if (entryActivity != null) {

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">D4rK Stickers</string>
-    <string name="title_validation_error">Eroare la pachet</string>
     <string name="tray_image_content_description">Imaginea Sticker Pack-ului</string>
     <string name="more_info_button">Mai multe informații despre acest pachet.</string>
     <string name="add_to_whatsapp">Adaugă în WhatsApp!!</string>
@@ -16,4 +14,5 @@
     <string name="info_send_email_to_prompt">Trimite email cu…</string>
     <string name="add_pack_fail_prompt_update_whatsapp">Pachetul nu poate sa fie adaugat. Asigură-te că ai cea mai recenta versiune de WhatsApp.</string>
     <string name="add_pack_fail_prompt_update_play_link">Acctualizează.</string>
+    <string name="license">Licență.</string>
 </resources>

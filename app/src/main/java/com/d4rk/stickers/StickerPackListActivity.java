@@ -21,7 +21,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
     private RecyclerView packRecyclerView;
     private StickerPackListAdapter allStickerPacksListAdapter;
     private WhiteListCheckAsyncTask whiteListCheckAsyncTask;
-    private ArrayList<StickerPack> stickerPackList;
+    private ArrayList < StickerPack > stickerPackList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +52,16 @@ public class StickerPackListActivity extends AddStickerPackActivity {
             openURL.setData(Uri.parse("https://www.atmegame.com/?utm_source=D4Cleaner&utm_medium=D4Cleaner"));
             startActivity(openURL);
         }
+        if (item.getItemId() == R.id.privacy_policy) {
+            Intent openURL = new Intent(Intent.ACTION_VIEW);
+            openURL.setData(Uri.parse("https://ghcdn.rawgit.org/D4rK7355608/com.d4rk.stickers/master/privacy_policy.html"));
+            startActivity(openURL);
+        }
+        if (item.getItemId() == R.id.license) {
+            Intent openURL = new Intent(Intent.ACTION_VIEW);
+            openURL.setData(Uri.parse("https://www.gnu.org/licenses/gpl-3.0.en.html"));
+            startActivity(openURL);
+        }
         return super.onOptionsItemSelected(item);
     }
     @Override
@@ -61,7 +71,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
             whiteListCheckAsyncTask.cancel(true);
         }
     }
-    private void showStickerPackList(@NonNull List<StickerPack> stickerPackList) {
+    private void showStickerPackList(@NonNull List < StickerPack > stickerPackList) {
         allStickerPacksListAdapter = new StickerPackListAdapter(stickerPackList, onAddButtonClickedListener);
         packRecyclerView.setAdapter(allStickerPacksListAdapter);
         packLayoutManager = new LinearLayoutManager(this);
@@ -87,27 +97,27 @@ public class StickerPackListActivity extends AddStickerPackActivity {
             allStickerPacksListAdapter.setImageRowSpec(maxNumberOfImagesInARow, minMarginBetweenImages);
         }
     }
-    static class WhiteListCheckAsyncTask extends AsyncTask<StickerPack, Void, List<StickerPack>> {
+    static class WhiteListCheckAsyncTask extends AsyncTask < StickerPack, Void, List < StickerPack >> {
         @NonNull
-        private final WeakReference<StickerPackListActivity> stickerPackListActivityWeakReference;
+        private final WeakReference < StickerPackListActivity > stickerPackListActivityWeakReference;
         WhiteListCheckAsyncTask(StickerPackListActivity stickerPackListActivity) {
-            this.stickerPackListActivityWeakReference = new WeakReference<>(stickerPackListActivity);
+            this.stickerPackListActivityWeakReference = new WeakReference < > (stickerPackListActivity);
         }
         @NonNull
         @Override
-        protected final List<StickerPack> doInBackground(@NonNull StickerPack... stickerPackArray) {
+        protected final List < StickerPack > doInBackground(@NonNull StickerPack...stickerPackArray) {
             final StickerPackListActivity stickerPackListActivity = stickerPackListActivityWeakReference.get();
             if (stickerPackListActivity == null) {
                 return Arrays.asList(stickerPackArray);
             }
-            for (StickerPack stickerPack : stickerPackArray) {
+            for (StickerPack stickerPack: stickerPackArray) {
                 stickerPack.setIsWhitelisted(WhitelistCheck.isWhitelisted(stickerPackListActivity, stickerPack.identifier));
             }
             return Arrays.asList(stickerPackArray);
         }
         @SuppressLint("NotifyDataSetChanged")
         @Override
-        protected void onPostExecute(@NonNull List<StickerPack> stickerPackList) {
+        protected void onPostExecute(@NonNull List < StickerPack > stickerPackList) {
             final StickerPackListActivity stickerPackListActivity = stickerPackListActivityWeakReference.get();
             if (stickerPackListActivity != null) {
                 stickerPackListActivity.allStickerPacksListAdapter.setStickerPackList(stickerPackList);

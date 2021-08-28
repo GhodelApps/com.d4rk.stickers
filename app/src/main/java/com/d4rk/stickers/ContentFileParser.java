@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 class ContentFileParser {
     @NonNull
-    static List<com.d4rk.stickers.StickerPack> parseStickerPacks(@NonNull InputStream contentsInputStream) throws IOException, IllegalStateException {
+    static List < com.d4rk.stickers.StickerPack > parseStickerPacks(@NonNull InputStream contentsInputStream) throws IOException, IllegalStateException {
         try (JsonReader reader = new JsonReader(new InputStreamReader(contentsInputStream))) {
             return readStickerPacks(reader);
         }
     }
     @NonNull
-    private static List<com.d4rk.stickers.StickerPack> readStickerPacks(@NonNull JsonReader reader) throws IOException, IllegalStateException {
-        List<StickerPack> stickerPackList = new ArrayList<>();
+    private static List < com.d4rk.stickers.StickerPack > readStickerPacks(@NonNull JsonReader reader) throws IOException, IllegalStateException {
+        List < StickerPack > stickerPackList = new ArrayList < > ();
         String androidPlayStoreLink = null;
         String iosAppStoreLink = null;
         reader.beginObject();
@@ -41,7 +41,7 @@ class ContentFileParser {
         if (stickerPackList.size() == 0) {
             throw new IllegalStateException("sticker pack list cannot be empty");
         }
-        for (StickerPack stickerPack : stickerPackList) {
+        for (StickerPack stickerPack: stickerPackList) {
             stickerPack.setAndroidPlayStoreLink(androidPlayStoreLink);
             stickerPack.setIosAppStoreLink(iosAppStoreLink);
         }
@@ -61,7 +61,7 @@ class ContentFileParser {
         String imageDataVersion = "";
         boolean avoidCache = false;
         boolean animatedStickerPack = false;
-        List<Sticker> stickerList = null;
+        List < Sticker > stickerList = null;
         while (reader.hasNext()) {
             String key = reader.nextName();
             switch (key) {
@@ -133,13 +133,13 @@ class ContentFileParser {
         return stickerPack;
     }
     @NonNull
-    private static List<Sticker> readStickers(@NonNull JsonReader reader) throws IOException, IllegalStateException {
+    private static List < Sticker > readStickers(@NonNull JsonReader reader) throws IOException, IllegalStateException {
         reader.beginArray();
-        List<Sticker> stickerList = new ArrayList<>();
+        List < Sticker > stickerList = new ArrayList < > ();
         while (reader.hasNext()) {
             reader.beginObject();
             String imageFile = null;
-            List<String> emojis = new ArrayList<>(com.d4rk.stickers.StickerPackValidator.EMOJI_MAX_LIMIT);
+            List < String > emojis = new ArrayList < > (com.d4rk.stickers.StickerPackValidator.EMOJI_MAX_LIMIT);
             while (reader.hasNext()) {
                 final String key = reader.nextName();
                 if ("image_file".equals(key)) {

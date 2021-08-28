@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
+<menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/link"
         android:icon="@drawable/ic_toolbar_atm"
         android:title="@string/play_cool_games_here"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/privacy_policy"
+        android:title="@string/privacy_policy"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/license"
+        android:title="@string/license"
+        app:showAsAction="never"/>
 </menu>

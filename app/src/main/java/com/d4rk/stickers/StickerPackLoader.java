@@ -29,14 +29,14 @@ import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_NAME_IN_QUER
 import static com.d4rk.stickers.StickerContentProvider.STICKER_PACK_PUBLISHER_IN_QUERY;
 class StickerPackLoader {
     @NonNull
-    static ArrayList<StickerPack> fetchStickerPacks(Context context) throws IllegalStateException {
+    static ArrayList < StickerPack > fetchStickerPacks(Context context) throws IllegalStateException {
         final Cursor cursor = context.getContentResolver().query(com.d4rk.stickers.StickerContentProvider.AUTHORITY_URI, null, null, null, null);
         if (cursor == null) {
             throw new IllegalStateException("could not fetch from content provider, " + BuildConfig.CONTENT_PROVIDER_AUTHORITY);
         }
-        HashSet<String> identifierSet = new HashSet<>();
-        final ArrayList<StickerPack> stickerPackList = fetchFromContentProvider(cursor);
-        for (StickerPack stickerPack : stickerPackList) {
+        HashSet < String > identifierSet = new HashSet < > ();
+        final ArrayList < StickerPack > stickerPackList = fetchFromContentProvider(cursor);
+        for (StickerPack stickerPack: stickerPackList) {
             if (identifierSet.contains(stickerPack.identifier)) {
                 throw new IllegalStateException("sticker pack identifiers should be unique, there are more than one pack with identifier:" + stickerPack.identifier);
             } else {
@@ -46,17 +46,17 @@ class StickerPackLoader {
         if (stickerPackList.isEmpty()) {
             throw new IllegalStateException("There should be at least one sticker pack in the app");
         }
-        for (StickerPack stickerPack : stickerPackList) {
-            final List<Sticker> stickers = getStickersForPack(context, stickerPack);
+        for (StickerPack stickerPack: stickerPackList) {
+            final List < Sticker > stickers = getStickersForPack(context, stickerPack);
             stickerPack.setStickers(stickers);
             com.d4rk.stickers.StickerPackValidator.verifyStickerPackValidity(context, stickerPack);
         }
         return stickerPackList;
     }
     @NonNull
-    private static List<Sticker> getStickersForPack(Context context, StickerPack stickerPack) {
-        final List<Sticker> stickers = fetchFromContentProviderForStickers(stickerPack.identifier, context.getContentResolver());
-        for (Sticker sticker : stickers) {
+    private static List < Sticker > getStickersForPack(Context context, StickerPack stickerPack) {
+        final List < Sticker > stickers = fetchFromContentProviderForStickers(stickerPack.identifier, context.getContentResolver());
+        for (Sticker sticker: stickers) {
             final byte[] bytes;
             try {
                 bytes = fetchStickerAsset(stickerPack.identifier, sticker.imageFileName, context.getContentResolver());
@@ -71,8 +71,8 @@ class StickerPackLoader {
         return stickers;
     }
     @NonNull
-    private static ArrayList<StickerPack> fetchFromContentProvider(Cursor cursor) {
-        ArrayList<StickerPack> stickerPackList = new ArrayList<>();
+    private static ArrayList < StickerPack > fetchFromContentProvider(Cursor cursor) {
+        ArrayList < StickerPack > stickerPackList = new ArrayList < > ();
         cursor.moveToFirst();
         do {
             final String identifier = cursor.getString(cursor.getColumnIndexOrThrow(STICKER_PACK_IDENTIFIER_IN_QUERY));
@@ -96,17 +96,20 @@ class StickerPackLoader {
         return stickerPackList;
     }
     @NonNull
-    private static List<Sticker> fetchFromContentProviderForStickers(String identifier, ContentResolver contentResolver) {
+    private static List < Sticker > fetchFromContentProviderForStickers(String identifier, ContentResolver contentResolver) {
         Uri uri = getStickerListUri(identifier);
-        final String[] projection = {STICKER_FILE_NAME_IN_QUERY, STICKER_FILE_EMOJI_IN_QUERY};
+        final String[] projection = {
+                STICKER_FILE_NAME_IN_QUERY,
+                STICKER_FILE_EMOJI_IN_QUERY
+        };
         final Cursor cursor = contentResolver.query(uri, projection, null, null, null);
-        List<Sticker> stickers = new ArrayList<>();
+        List < Sticker > stickers = new ArrayList < > ();
         if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();
             do {
                 final String name = cursor.getString(cursor.getColumnIndexOrThrow(STICKER_FILE_NAME_IN_QUERY));
                 final String emojisConcatenated = cursor.getString(cursor.getColumnIndexOrThrow(STICKER_FILE_EMOJI_IN_QUERY));
-                List<String> emojis = new ArrayList<>(com.d4rk.stickers.StickerPackValidator.EMOJI_MAX_LIMIT);
+                List < String > emojis = new ArrayList < > (com.d4rk.stickers.StickerPackValidator.EMOJI_MAX_LIMIT);
                 if (!TextUtils.isEmpty(emojisConcatenated)) {
                     emojis = Arrays.asList(emojisConcatenated.split(","));
                 }
@@ -119,8 +122,7 @@ class StickerPackLoader {
         return stickers;
     }
     static byte[] fetchStickerAsset(@NonNull final String identifier, @NonNull final String name, ContentResolver contentResolver) throws IOException {
-        try (final InputStream inputStream = contentResolver.openInputStream(getStickerAssetUri(identifier, name));
-             final ByteArrayOutputStream buffer = new ByteArrayOutputStream()) {
+        try (final InputStream inputStream = contentResolver.openInputStream(getStickerAssetUri(identifier, name)); final ByteArrayOutputStream buffer = new ByteArrayOutputStream()) {
             if (inputStream == null) {
                 throw new IOException("cannot read sticker asset:" + identifier + "/" + name);
             }

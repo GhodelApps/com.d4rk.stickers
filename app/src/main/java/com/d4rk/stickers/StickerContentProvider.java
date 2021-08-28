@@ -46,7 +46,7 @@ public class StickerContentProvider extends ContentProvider {
     static final String STICKERS_ASSET = "stickers_asset";
     private static final int STICKERS_ASSET_CODE = 4;
     private static final int STICKER_PACK_TRAY_ICON_CODE = 5;
-    private List<StickerPack> stickerPackList;
+    private List < StickerPack > stickerPackList;
     @Override
     public boolean onCreate() {
         final String authority = BuildConfig.CONTENT_PROVIDER_AUTHORITY;
@@ -56,9 +56,9 @@ public class StickerContentProvider extends ContentProvider {
         MATCHER.addURI(authority, METADATA, METADATA_CODE);
         MATCHER.addURI(authority, METADATA + "/*", METADATA_CODE_FOR_SINGLE_PACK);
         MATCHER.addURI(authority, STICKERS + "/*", STICKERS_CODE);
-        for (StickerPack stickerPack : getStickerPackList()) {
+        for (StickerPack stickerPack: getStickerPackList()) {
             MATCHER.addURI(authority, STICKERS_ASSET + "/" + stickerPack.identifier + "/" + stickerPack.trayImageFile, STICKER_PACK_TRAY_ICON_CODE);
-            for (Sticker sticker : stickerPack.getStickers()) {
+            for (Sticker sticker: stickerPack.getStickers()) {
                 MATCHER.addURI(authority, STICKERS_ASSET + "/" + stickerPack.identifier + "/" + sticker.imageFileName, STICKERS_ASSET_CODE);
             }
         }
@@ -112,7 +112,7 @@ public class StickerContentProvider extends ContentProvider {
             throw new RuntimeException(CONTENT_FILE_NAME + " file has some issues: " + e.getMessage(), e);
         }
     }
-    private List<StickerPack> getStickerPackList() {
+    private List < StickerPack > getStickerPackList() {
         if (stickerPackList == null) {
             readContentFile(Objects.requireNonNull(getContext()));
         }
@@ -123,17 +123,17 @@ public class StickerContentProvider extends ContentProvider {
     }
     private Cursor getCursorForSingleStickerPack(@NonNull Uri uri) {
         final String identifier = uri.getLastPathSegment();
-        for (StickerPack stickerPack : getStickerPackList()) {
+        for (StickerPack stickerPack: getStickerPackList()) {
             if (identifier.equals(stickerPack.identifier)) {
                 return getStickerPackInfo(uri, Collections.singletonList(stickerPack));
             }
         }
-        return getStickerPackInfo(uri, new ArrayList<>());
+        return getStickerPackInfo(uri, new ArrayList < > ());
     }
     @NonNull
-    private Cursor getStickerPackInfo(@NonNull Uri uri, @NonNull List<StickerPack> stickerPackList) {
+    private Cursor getStickerPackInfo(@NonNull Uri uri, @NonNull List < StickerPack > stickerPackList) {
         MatrixCursor cursor = new MatrixCursor(
-                new String[]{
+                new String[] {
                         STICKER_PACK_IDENTIFIER_IN_QUERY,
                         STICKER_PACK_NAME_IN_QUERY,
                         STICKER_PACK_PUBLISHER_IN_QUERY,
@@ -148,7 +148,7 @@ public class StickerContentProvider extends ContentProvider {
                         AVOID_CACHE,
                         ANIMATED_STICKER_PACK,
                 });
-        for (StickerPack stickerPack : stickerPackList) {
+        for (StickerPack stickerPack: stickerPackList) {
             MatrixCursor.RowBuilder builder = cursor.newRow();
             builder.add(stickerPack.identifier);
             builder.add(stickerPack.name);
@@ -170,11 +170,16 @@ public class StickerContentProvider extends ContentProvider {
     @NonNull
     private Cursor getStickersForAStickerPack(@NonNull Uri uri) {
         final String identifier = uri.getLastPathSegment();
-        MatrixCursor cursor = new MatrixCursor(new String[]{STICKER_FILE_NAME_IN_QUERY, STICKER_FILE_EMOJI_IN_QUERY});
-        for (StickerPack stickerPack : getStickerPackList()) {
+        MatrixCursor cursor = new MatrixCursor(new String[] {
+                STICKER_FILE_NAME_IN_QUERY,
+                STICKER_FILE_EMOJI_IN_QUERY
+        });
+        for (StickerPack stickerPack: getStickerPackList()) {
             if (identifier.equals(stickerPack.identifier)) {
-                for (Sticker sticker : stickerPack.getStickers()) {
-                    cursor.addRow(new Object[]{sticker.imageFileName, TextUtils.join(",", sticker.emojis)});
+                for (Sticker sticker: stickerPack.getStickers()) {
+                    cursor.addRow(new Object[] {
+                            sticker.imageFileName, TextUtils.join(",", sticker.emojis)
+                    });
                 }
             }
         }
@@ -183,7 +188,7 @@ public class StickerContentProvider extends ContentProvider {
     }
     private AssetFileDescriptor getImageAsset(Uri uri) throws IllegalArgumentException {
         AssetManager am = Objects.requireNonNull(getContext()).getAssets();
-        final List<String> pathSegments = uri.getPathSegments();
+        final List < String > pathSegments = uri.getPathSegments();
         if (pathSegments.size() != 3) {
             throw new IllegalArgumentException("path segments should be 3, uri is: " + uri);
         }
@@ -195,12 +200,12 @@ public class StickerContentProvider extends ContentProvider {
         if (TextUtils.isEmpty(fileName)) {
             throw new IllegalArgumentException("file name is empty, uri: " + uri);
         }
-        for (StickerPack stickerPack : getStickerPackList()) {
+        for (StickerPack stickerPack: getStickerPackList()) {
             if (identifier.equals(stickerPack.identifier)) {
                 if (fileName.equals(stickerPack.trayImageFile)) {
                     return fetchFile(uri, am, fileName, identifier);
                 } else {
-                    for (Sticker sticker : stickerPack.getStickers()) {
+                    for (Sticker sticker: stickerPack.getStickers()) {
                         if (fileName.equals(sticker.imageFileName)) {
                             return fetchFile(uri, am, fileName, identifier);
                         }

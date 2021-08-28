@@ -13,14 +13,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
-public class StickerPackListAdapter extends RecyclerView.Adapter<com.d4rk.stickers.StickerPackListItemViewHolder> {
+public class StickerPackListAdapter extends RecyclerView.Adapter < com.d4rk.stickers.StickerPackListItemViewHolder > {
     @NonNull
-    private List<StickerPack> stickerPacks;
+    private List < StickerPack > stickerPacks;
     @NonNull
     private final OnAddButtonClickedListener onAddButtonClickedListener;
     private int maxNumberOfStickersInARow;
     private int minMarginBetweenImages;
-    StickerPackListAdapter(@NonNull List<StickerPack> stickerPacks, @NonNull OnAddButtonClickedListener onAddButtonClickedListener) {
+    StickerPackListAdapter(@NonNull List < StickerPack > stickerPacks, @NonNull OnAddButtonClickedListener onAddButtonClickedListener) {
         this.stickerPacks = stickerPacks;
         this.onAddButtonClickedListener = onAddButtonClickedListener;
     }
@@ -90,7 +90,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<com.d4rk.sticke
             notifyDataSetChanged();
         }
     }
-    void setStickerPackList(List<StickerPack> stickerPackList) {
+    void setStickerPackList(List < StickerPack > stickerPackList) {
         this.stickerPacks = stickerPackList;
     }
     public interface OnAddButtonClickedListener {
