@@ -13,7 +13,7 @@
     <string name="license_agreement">Acord de licențiere.</string>
     <string name="info_screen_tray_icon">Iconița</string>
     <string name="details_pack_already_added">Pachetul a fost adaugat în WhatsApp!</string>
-    <string name="info_send_email_to_prompt">Trimite email cu...</string>
+    <string name="info_send_email_to_prompt">Trimite email cu…</string>
     <string name="add_pack_fail_prompt_update_whatsapp">Pachetul nu poate sa fie adaugat. Asigură-te că ai cea mai recenta versiune de WhatsApp.</string>
     <string name="add_pack_fail_prompt_update_play_link">Acctualizează.</string>
 </resources>

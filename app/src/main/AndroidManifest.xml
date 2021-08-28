@@ -6,7 +6,7 @@
     xmlns:dist="http://schemas.android.com/apk/distribution">
     <dist:module dist:instant="true"/>
     <application
-        android:name="com.d4rk.stickers.StickerApplication"
+        android:name=".StickerApplication"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
@@ -14,31 +14,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name="com.d4rk.stickers.EntryActivity"
+        <activity android:name=".EntryActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.d4rk.stickers.StickerPackListActivity"/>
+        <activity android:name=".StickerPackListActivity"/>
         <activity
-            android:name="com.d4rk.stickers.StickerPackDetailsActivity"
-            android:parentActivityName="com.d4rk.stickers.StickerPackListActivity">
+            android:name=".StickerPackDetailsActivity"
+            android:parentActivityName=".StickerPackListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.d4rk.stickers.StickerPackListActivity"/>
+                android:value=".StickerPackListActivity"/>
         </activity>
         <activity
-            android:name="com.d4rk.stickers.StickerPackInfoActivity"
+            android:name=".StickerPackInfoActivity"
             android:label="@string/title_activity_sticker_pack_info"
-            android:parentActivityName="com.d4rk.stickers.StickerPackDetailsActivity">
+            android:parentActivityName=".StickerPackDetailsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.d4rk.stickers.StickerPackDetailsActivity"/>
+                android:value=".StickerPackDetailsActivity"/>
         </activity>
         <provider
-            android:name="com.d4rk.stickers.StickerContentProvider"
+            android:name=".StickerContentProvider"
             android:authorities="${contentProviderAuthority}"
             android:enabled="true"
             android:exported="true"

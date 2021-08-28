@@ -10,9 +10,10 @@ import androidx.annotation.NonNull;
 import com.facebook.animated.webp.WebPImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import com.facebook.imagepipeline.common.ImageDecodeOptions;
 import java.net.URL;
 import java.util.List;
-class StickerPackValidator {
+abstract class StickerPackValidator {
     private static final int STATIC_STICKER_FILE_LIMIT_KB = 100;
     private static final int ANIMATED_STICKER_FILE_LIMIT_KB = 500;
     static final int EMOJI_MAX_LIMIT = 3;
@@ -122,7 +123,7 @@ class StickerPackValidator {
                 throw new IllegalStateException("animated sticker should be less than " + ANIMATED_STICKER_FILE_LIMIT_KB + "KB, current file is " + stickerInBytes.length / KB_IN_BYTES + " KB, sticker pack identifier: " + identifier + ", filename: " + fileName);
             }
             try {
-                final WebPImage webPImage = WebPImage.createFromByteArray(stickerInBytes);
+                final WebPImage webPImage = WebPImage.createFromByteArray(stickerInBytes, ImageDecodeOptions.defaults());
                 if (webPImage.getHeight() != IMAGE_HEIGHT) {
                     throw new IllegalStateException("sticker height should be " + IMAGE_HEIGHT + ", current height is " + webPImage.getHeight() + ", sticker pack identifier: " + identifier + ", filename: " + fileName);
                 }
