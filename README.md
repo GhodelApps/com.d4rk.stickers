@@ -1,8 +1,7 @@
 <p align="center">
-<img src="/app/src/res/drawable-xxxhdpi/d4rk.png" width="200">
+<img src="/app/src/main/res/drawable-xxxhdpi/d4rk.png" width="200">
 </p>
 
-![Android CI](https://github.com/D4rK7355608/com.d4rk.stickers/workflows/Android%20CI/badge.svg)
 ![Works with Android](https://img.shields.io/badge/Works%20with-Android-blue)
 ![GitHub issues](https://img.shields.io/github/issues/D4rK7355608/com.d4rk.stickers)
 ![Pull requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.stickers?label=Pull%20requests)
@@ -14,7 +13,6 @@
 - ╔╦╦╦═╦╗╔═╦═╦══╦═╗
 - ║║║║╩╣╚╣═╣║║║║║╩╣
 - ╚══╩═╩═╩═╩═╩╩╩╩═╝
-
 
 # Fun stickers for WhatsApp Messenger with simple and clean material design by D4rK inspired by Google!
 
