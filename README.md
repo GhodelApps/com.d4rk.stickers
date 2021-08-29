@@ -18,7 +18,7 @@
 
 [<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/google_play_store.png"
 alt="Get it on Google Play"
-height="90">](https://play.google.com/store/apps/details?id=com.d4rk.cleaner)
+height="90">](https://play.google.com/store/apps/details?id=com.d4rk.stickers)
 [<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/youtube.png"
 alt="YouTube"
 height="90">](https://www.youtube.com/channel/UCLDi-rmSRry0pNL-oVvGJAw/featured)
