@@ -15,4 +15,5 @@
     <string name="add_pack_fail_prompt_update_whatsapp">Pachetul nu poate sa fie adaugat. Asigură-te că ai cea mai recenta versiune de WhatsApp.</string>
     <string name="add_pack_fail_prompt_update_play_link">Acctualizează.</string>
     <string name="license">Licență.</string>
+    <string name="open_source_libraries">Biblioteci open source.</string>
 </resources>

@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">更新</string>
     <string name="license_agreement">授权协议</string>
 	<string name="license">执照。</string>
+    <string name="open_source_libraries">开源库。</string>
 </resources>

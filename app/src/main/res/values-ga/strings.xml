@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_whatsapp">Níor cuireadh pacáiste greamáin leis. Más mian leat é a chur leis, déan cinnte go nuashonraíonn tú an leagan is déanaí de WhatsApp.</string>
 	<string name="add_pack_fail_prompt_update_play_link">Nuashonrú</string>
 	<string name="license">Ceadúnas.</string>
+    <string name="open_source_libraries">Leabharlanna foinse oscailte.</string>
 </resources>

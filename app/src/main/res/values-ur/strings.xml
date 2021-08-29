@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">&#x200f;اپ ڈیٹ کریں</string>
 	<string name="license_agreement">&#x200f;لائسنس کا معاہدہ</string>
 	<string name="license">لائسنس</string>
+    <string name="open_source_libraries">اوپن سورس لائبریریاں۔</string>
 </resources>

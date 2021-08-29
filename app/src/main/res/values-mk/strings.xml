@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">Ажурирај</string>
 	<string name="license_agreement">Договор за лиценца</string>
 	<string name="license">Лиценца.</string>
+    <string name="open_source_libraries">Библиотеки со отворен код.</string>
 </resources>

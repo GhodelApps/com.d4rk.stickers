@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">ಅಪ್‌ಡೇಟ್‌ ಮಾಡಿ</string>
 	<string name="license_agreement">ಲೈಸೆನ್ಸ್ ಕರಾರು</string>
 	<string name="license">ಪರವಾನಗಿ.</string>
+    <string name="open_source_libraries">ತೆರೆದ ಮೂಲ ಗ್ರಂಥಾಲಯಗಳು.</string>
 </resources>

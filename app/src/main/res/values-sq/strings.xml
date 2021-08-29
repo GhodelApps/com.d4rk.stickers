@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">Përditëso</string>
 	<string name="license_agreement">Marrëveshja e licencës</string>
 	<string name="license">Liçensë.</string>
+    <string name="open_source_libraries">Biblioteka me burim të hapur.</string>
 </resources>

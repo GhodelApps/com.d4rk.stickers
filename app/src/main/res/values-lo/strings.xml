@@ -15,5 +15,6 @@
 	<string name="add_pack_fail_prompt_update_whatsapp">ຊຸດສະຕິກເກີ້ບໍ່ຖືກເພີ່ມ. ຫາກທ່ານຕ້ອງການເພີ່ມມັນ, ກະລຸນາອັບເດດ WhatsApp ຂອງທ່ານເປັນເວີຊັນຫຼ້າສຸດ.</string>
 	<string name="add_pack_fail_prompt_update_play_link">ອັບເດດ</string>
 	<string name="license_agreement">ຂໍ້ຕົກລົງກ່ຽວກັບລິຂະສິດ</string>
-	<string name="sticker_pack_details_tap_to_preview">ແຕະເພື່ອເບິ່ງຕົວຢ່າງສະຕິກເກີ</string>
+	<string name="license">ໃບອະນຸຍາດ.</string>
+	<string name="open_source_libraries">ຫ້ອງສະຸດແຫຼ່ງເປີດ.</string>
 </resources>

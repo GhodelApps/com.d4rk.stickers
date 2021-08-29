@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.facebook.fresco:animated-base:2.5.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ce2f6918b9c90c390293efdad7cb4a6/jetified-animated-base-2.5.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ce2f6918b9c90c390293efdad7cb4a6/jetified-animated-base-2.5.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ce2f6918b9c90c390293efdad7cb4a6/jetified-animated-base-2.5.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4d1b5c80ef26744163740e024d83796c/jetified-animated-base-2.5.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4d1b5c80ef26744163740e024d83796c/jetified-animated-base-2.5.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4d1b5c80ef26744163740e024d83796c/jetified-animated-base-2.5.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.fresco/animated-base/2.5.0/c681d7744c45714d1a718aff5db02f753ed802d4/animated-base-2.5.0-javadoc.jar!/" />

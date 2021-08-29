@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">Frissítés</string>
 	<string name="license_agreement">Licencszerződés</string>
 	<string name="license">Engedély.</string>
+    <string name="open_source_libraries">Nyílt forráskódú könyvtárak.</string>
 </resources>

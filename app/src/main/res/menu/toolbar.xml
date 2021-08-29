@@ -16,4 +16,8 @@
         android:id="@+id/license"
         android:title="@string/license"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/open_source_libraries"
+        android:title="@string/open_source_libraries"
+        app:showAsAction="never"/>
 </menu>

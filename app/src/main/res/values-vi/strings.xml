@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">Cập nhật</string>
 	<string name="license_agreement">Thoả thuận bản quyền</string>
 	<string name="license">Giấy phép.</string>
+    <string name="open_source_libraries">Các thư viện mã nguồn mở.</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,6 +57,9 @@ public class StickerPackListActivity extends AddStickerPackActivity {
             Intent openURL = new Intent(Intent.ACTION_VIEW);
             openURL.setData(Uri.parse("https://ghcdn.rawgit.org/D4rK7355608/com.d4rk.stickers/master/privacy_policy.html"));
             startActivity(openURL);
+        }
+        if (item.getItemId() == R.id.open_source_libraries) {
+            startActivity(new Intent(this, OssLicensesMenuActivity.class));
         }
         if (item.getItemId() == R.id.license) {
             Intent openURL = new Intent(Intent.ACTION_VIEW);

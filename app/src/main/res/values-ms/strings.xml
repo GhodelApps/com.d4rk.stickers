@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">Kemas kini</string>
 	<string name="license_agreement">Perjanjian lesen</string>
 	<string name="license">Lesen.</string>
+    <string name="open_source_libraries">Perpustakaan sumber terbuka.</string>
 </resources>

@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">അപ്ഡേറ്റ് ചെയ്യുക</string>
 	<string name="license_agreement">ലൈസൻസ് ഉടമ്പടി</string>
 	<string name="license">ലൈസൻസ്.</string>
+    <string name="open_source_libraries">ഓപ്പൺ സോഴ്സ് ലൈബ്രറികൾ.</string>
 </resources>

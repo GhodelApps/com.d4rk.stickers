@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">Uuenda</string>
 	<string name="license_agreement">Litsentsileping</string>
 	<string name="license">Litsents.</string>
+    <string name="open_source_libraries">Avatud lähtekoodiga teegid.</string>
 </resources>

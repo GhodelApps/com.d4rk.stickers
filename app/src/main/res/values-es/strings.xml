@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">Actualizar</string>
 	<string name="license_agreement">Acuerdo de licencia</string>
 	<string name="license">Licencia.</string>
+    <string name="open_source_libraries">Bibliotecas de código abierto.</string>
 </resources>

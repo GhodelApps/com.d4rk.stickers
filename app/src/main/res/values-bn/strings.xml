@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 	<string name="tray_image_content_description">স্টিকার প্যাক ট্রের ছবি</string>
 	<string name="more_info_button">স্টিকার প্যাক সম্পর্কে আরও তথ্য</string>
 	<string name="add_to_whatsapp">WhatsApp-এ যোগ করুন</string>
@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">আপডেট করুন</string>
 	<string name="license_agreement">লাইসেন্স চুক্তি</string>
 	<string name="license">লাইসেন্স.</string>
+    <string name="open_source_libraries">ওপেন সোর্স লাইব্রেরি।</string>
 </resources>

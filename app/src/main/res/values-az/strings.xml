@@ -3,7 +3,6 @@
 	<string name="tray_image_content_description">Stiker Paketi Sini Görüntüsü</string>
 	<string name="more_info_button">Stiker paketi barədə daha ətraflı</string>
 	<string name="add_to_whatsapp">WhatsApp-a əlavə et</string>
-	<string name="add_button_content_description">Stiker paketini WhatsApp-a əlavə et</string>
 	<string name="title_activity_sticker_pack_details_multiple_pack">Stikerin təsviri</string>
 	<string name="title_activity_sticker_pack_info">Məlumat</string>
 	<string name="view_webpage">Vebsayta baxış</string>
@@ -16,4 +15,6 @@
 	<string name="add_pack_fail_prompt_update_play_link">Yenilə</string>
 	<string name="license_agreement">Lisenziya razılaşması</string>
 	<string name="license">Lisenziya.</string>
+	<string name="open_source_libraries">"Açıq mənbə kitabxanaları. "</string>
+	<string name="add_button_content_description">WhatsApp -a etiket paketi əlavə edin</string>
 </resources>

@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">Actualizați</string>
 	<string name="license_agreement">Acord de licență</string>
 	<string name="license">Licență.</string>
+    <string name="open_source_libraries">Biblioteci open source.</string>
 </resources>

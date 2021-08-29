@@ -16,4 +16,5 @@
 	<string name="add_pack_fail_prompt_update_play_link">I-update</string>
 	<string name="license_agreement">Kasunduan sa lisensya</string>
 	<string name="license">Lisensya.</string>
+    <string name="open_source_libraries">Buksan ang mga library ng mapagkukunan.</string>
 </resources>
