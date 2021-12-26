@@ -6,7 +6,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/D4rK7355608/com.d4rk.stickers)
 ![Pull requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.stickers?label=Pull%20requests)
 ![GitHub license](https://img.shields.io/github/license/D4rK7355608/com.d4rk.stickers?label=License)
-![code-grade](https://www.code-inspector.com/project/26545/status/svg)
+![code-grade](https://api.codiga.io/project/26545/status/svg)
 
 ## D4rK Stickers
 
@@ -14,26 +14,26 @@
 - ║║║║╩╣╚╣═╣║║║║║╩╣
 - ╚══╩═╩═╩═╩═╩╩╩╩═╝
 
-# Fun stickers for WhatsApp Messenger with simple and clean material design by D4rK inspired by Google!
+# Fun stickers for WhatsApp Messenger with simple and clean material design by D4rK inspired by Google! Now supports Material-You on Android 12+ devices!!!
 
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/google_play_store.png"
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/google_play_store.png"
 alt="Get it on Google Play"
-height="90">](https://play.google.com/store/apps/details?id=com.d4rk.stickers)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/youtube.png"
+height="90">](https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner)
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/youtube.png"
 alt="YouTube"
-height="90">](https://www.youtube.com/channel/UCLDi-rmSRry0pNL-oVvGJAw/featured)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/patreon.png"
+height="90">](https://bit.ly/D4rKYouTube)
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/patreon.png"
 alt="Patreon"
 height="90">](https://www.patreon.com/d4rk7355608)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/paypal.png"
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/paypal.png"
 alt="PayPall"
 height="90">](https://www.paypal.me/d4rkmichaeltutorials)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/deviant_art.png"
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/deviant_art.png"
 alt="PayPall"
 height="90">](https://www.deviantart.com/d4rk7355608)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/gamejolt.png"
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/gamejolt.png"
 alt="PayPall"
-height="90">](https://gamejolt.com/@D4rK_S-A-D)
+height="90">](https://bit.ly/D4rK-S-A-D)
 
 High quality stickers for WhatsApp Messenger upgraded to be compatible with Android 11 (API 30) with simple and clean material design inspired by Google.
 
@@ -64,10 +64,11 @@ __D4rK Stickers is 100% free, open source, ad free, and fun for everyone.__
 <details>
   <summary>Special Thanks</summary>
 
+- Thanks [WhatsApp](https://github.com/WhatsApp) for [stickers](ttps://github.com/WhatsApp/stickers);
 - Thanks YoYo, UnderBenis96, Sonerie C8chilu' dă Haur a.k.a Băiatu' Pocnitoare (fostă petardă de elită pă vremea lu' Ștefan cel Mare) & Wiss Kill for testing;
 
 </details>
 
-__Privacy Policy:__ https://ghcdn.rawgit.org/D4rK7355608/com.d4rk.stickers/master/privacy_policy.html
+__Privacy Policy:__ https://bit.ly/d4rkstickers1privacypolicy
 
 ![license](https://imgur.com/QQlcEVT.png)

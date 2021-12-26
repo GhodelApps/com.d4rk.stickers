@@ -7,16 +7,17 @@
     android:layout_marginEnd="6dp"
     android:layout_marginTop="2dp"
     android:layout_marginBottom="2dp"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="21dp"
     app:cardUseCompatPadding="true"
     android:layout_width="match_parent"
+    app:strokeWidth="0dp"
+    app:cardElevation="5dp"
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
         android:orientation="vertical">
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             style="@style/InfoButtonStyle"
             android:id="@+id/tray_icon"
             android:clickable="false"
@@ -24,22 +25,22 @@
             android:textColor="#673AB7"
             tools:drawableLeft="@drawable/ic_sticker_d4rk"
             tools:drawableStart="@drawable/ic_sticker_d4rk"/>
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             style="@style/InfoButtonStyle"
             android:id="@+id/view_webpage"
             android:text="@string/view_webpage"
             app:drawableStartCompat="@drawable/ic_info_youtube"/>
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             style="@style/InfoButtonStyle"
             android:id="@+id/send_email"
             android:text="@string/send_email"
             app:drawableStartCompat="@drawable/ic_info_gmail"/>
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             style="@style/InfoButtonStyle"
             android:id="@+id/license_agreement"
             android:text="@string/license_agreement"
             app:drawableStartCompat="@drawable/ic_info_licence_agreement"/>
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             style="@style/InfoButtonStyle"
             android:id="@+id/privacy_policy"
             android:text="@string/privacy_policy"

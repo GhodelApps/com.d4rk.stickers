@@ -50,12 +50,12 @@ public class StickerPackListActivity extends AddStickerPackActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.link) {
             Intent openURL = new Intent(Intent.ACTION_VIEW);
-            openURL.setData(Uri.parse("https://www.atmegame.com/?utm_source=D4Cleaner&utm_medium=D4Cleaner"));
+            openURL.setData(Uri.parse("https://bit.ly/d4rkcleaneratm"));
             startActivity(openURL);
         }
         if (item.getItemId() == R.id.privacy_policy) {
             Intent openURL = new Intent(Intent.ACTION_VIEW);
-            openURL.setData(Uri.parse("https://ghcdn.rawgit.org/D4rK7355608/com.d4rk.stickers/master/privacy_policy.html"));
+            openURL.setData(Uri.parse("https://bit.ly/d4rkstickers1privacypolicy"));
             startActivity(openURL);
         }
         if (item.getItemId() == R.id.open_source_libraries) {
@@ -63,7 +63,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         }
         if (item.getItemId() == R.id.license) {
             Intent openURL = new Intent(Intent.ACTION_VIEW);
-            openURL.setData(Uri.parse("https://www.gnu.org/licenses/gpl-3.0.en.html"));
+            openURL.setData(Uri.parse("https://bit.ly/GPL-3_0"));
             startActivity(openURL);
         }
         return super.onOptionsItemSelected(item);

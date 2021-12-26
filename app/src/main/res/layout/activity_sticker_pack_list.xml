@@ -7,12 +7,13 @@
     android:layout_marginEnd="6dp"
     android:layout_marginTop="2dp"
     android:layout_marginBottom="1dp"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="21dp"
+    app:strokeWidth="0dp"
     app:cardElevation="5dp"
     app:cardUseCompatPadding="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/error_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -17,7 +17,7 @@
         android:layout_marginEnd="@dimen/preview_side_margin"
         android:layout_marginRight="@dimen/preview_side_margin"
         android:layout_marginBottom="24dp">
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/tray_image"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -28,7 +28,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@color/colorAccent"/>
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/pack_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             app:layout_constraintStart_toEndOf="@+id/tray_image"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Pack Name"/>
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/sticker_pack_animation_indicator"
             android:layout_width="15dp"
             android:layout_height="15dp"
@@ -51,7 +51,7 @@
             app:layout_constraintTop_toTopOf="@+id/pack_name"
             app:tint="@color/animatedStickerIndicator"
             tools:ignore="ImageContrastCheck"/>
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
             app:layout_constraintStart_toEndOf="@+id/tray_image"
             app:layout_constraintTop_toBottomOf="@+id/pack_name"
             tools:text="Author"/>
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/pack_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
         android:layout_marginEnd="@dimen/preview_side_margin"
         android:layout_marginRight="@dimen/preview_side_margin"
         android:minHeight="60dp">
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/already_added_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -120,14 +120,15 @@
             tools:visibility="visible"/>
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/add_to_whatsapp_button"
-            app:cardCornerRadius="8dp"
-            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="21dp"
+            app:strokeWidth="0dp"
+            app:cardElevation="0.1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:clickable="true"
             android:focusable="true">
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 style="@style/StickerPreviewButtonText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,7 +142,7 @@
                 app:drawableStartCompat="@drawable/ic_whatsapp_add"/>
         </com.google.android.material.card.MaterialCardView>
     </FrameLayout>
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/sticker_pack_details_tap_to_preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
